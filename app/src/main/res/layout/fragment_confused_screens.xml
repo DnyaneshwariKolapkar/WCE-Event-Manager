@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background"
+    tools:context=".screens.ConfusedScreens">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:src="@drawable/onboarding_confused_img"
+        android:layout_width="300dp"
+        android:layout_height="297dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="138dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/confused"
+        android:textAlignment="textStart"
+        android:textColor="#FF7917"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="344dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="28dp"
+        android:text="@string/confused_text_decp"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp" />
+</LinearLayout>

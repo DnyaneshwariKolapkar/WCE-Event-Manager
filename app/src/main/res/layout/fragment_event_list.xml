@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".bottomnav.EventListFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:background="@drawable/whitecard2"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:elevation="5dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ben_sweet"
+            android:layout_marginTop="50dp"
+            android:layout_marginStart="50dp"/>
+
+        <TextView
+            android:id="@+id/welcome_text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/welcome_texty"
+            android:textStyle="bold|italic"
+            android:textColor="@color/orange"
+            android:textSize="26sp"
+            android:layout_marginTop="50dp"
+            android:layout_marginStart="130dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/welcome_text2"
+            android:textStyle="italic"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:layout_below="@+id/welcome_text1"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="130dp"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/upcoming_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Upcoimg events"
+        android:textStyle="bold"
+        android:textSize="28sp"
+        android:textColor="@color/white"
+        android:layout_below="@id/top_bar"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/event_recy_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/upcoming_text"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="30dp"
+        android:layout_centerHorizontal="true"
+        />
+
+</RelativeLayout>

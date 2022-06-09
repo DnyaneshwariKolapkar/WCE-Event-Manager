@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">WCE Event Manager</string>
+    <string name="app_logo">app logo</string>
+    <string name="app_Fname">WCE Event Organizer</string>
+    <string name="next">Next</string>
+    <string name="confused">Confused</string>
+    <string name="confused_text_decp">Confused where all your time flies and all the tasks\n you planned for the day left unchecked</string>
+    <string name="time_manage_decp">Want to manage your time so that you get extra hours for yourself!</string>
+    <string name="time_management">Time Management</string>
+    <string name="getstarted">From now onwards using the Walchand\nEvent Manager .which will help you to list\nall the events and other happening in\nour college</string>
+    <string name="get_started">Get Started</string>
+    <string name="get_started_logo">get_started_logo</string>
+    <string name="name">Name</string>
+    <string name="password">Password</string>
+    <string name="sign_decp">Use your college id to sign up to the account.</string>
+    <string name="email">Email</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="login_desp">Use your college id to login to your account.</string>
+    <string name="login">Login</string>
+    <string name="welcome_desp">Login with your allotted college email id. If you didn\'t created the account yet then sign up using the college id.</string>
+    <string name="home">Home</string>
+    <string name="calender">Calender</string>
+    <string name="profile">Profile</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="continue_as_guest">Continue As Guest</string>
+    <string name="welcome">Welcome</string>
+    <string name="welcome_texty">Welcome</string>
+    <string name="welcome_text2">Let\'s see what\'s there for you</string>
+</resources>
