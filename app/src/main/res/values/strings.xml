@@ -26,4 +26,9 @@
     <string name="welcome">Welcome</string>
     <string name="welcome_texty">Welcome</string>
     <string name="welcome_text2">Let\'s see what\'s there for you</string>
+    <string name="calendar">Calendar</string>
+    <string name="let_s_see_what_is_planned_for_the_week">Let\'s see what is planned for the week!</string>
+    <string name="monthly">Monthly</string>
+    <string name="weekly">Weekly</string>
+    <string name="fab">fab</string>
 </resources>

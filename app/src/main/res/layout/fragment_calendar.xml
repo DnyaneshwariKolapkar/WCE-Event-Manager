@@ -1,14 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".bottomnav.CalendarFragment">
+    tools:context=".bottomnav.CalendarFragment"
+    android:background="@drawable/background">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
+        android:id="@+id/rl1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="130dp"
+        android:background="@drawable/whitecard2">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/txt1"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:text="@string/calendar"
+            android:textColor="@color/orange"
+            android:textSize="35sp"
+            android:textStyle="bold|normal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_below="@+id/txt1"
+            android:layout_centerHorizontal="true"
+            android:text="@string/let_s_see_what_is_planned_for_the_week"
+            android:textColor="#80000000"
+            android:textSize="13sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll1"
+        android:layout_width="wrap_content"
+        android:layout_height="55dp"
+        android:layout_below="@id/rl1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/middlewhitecard"
+        android:gravity="center">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_Month"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:text="@string/monthly"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/font1"
+            app:backgroundTint="@color/orange"
+            app:cornerRadius="50dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnWeek"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="10sp"
+            android:layout_marginBottom="2dp"
+            android:text="@string/weekly"
+            android:textAllCaps="false"
+            android:textColor="#808080"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/font1"
+            app:backgroundTint="@color/white"
+            app:cornerRadius="50dp" />
+
+    </LinearLayout>
+
+    <CalendarView
+        android:layout_width="match_parent"
+        android:layout_height="330dp"
+        android:layout_below="@id/ll1"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/calendar_whitecard" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/orange"
+        android:clickable="true"
+        android:contentDescription="@string/fab"
+        android:focusable="true"
+        android:src="@drawable/ic_baseline_add_24"
+        android:tint="@android:color/white" />
+
+
+</RelativeLayout>
