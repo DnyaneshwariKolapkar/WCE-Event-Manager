@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".registration_form">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <RelativeLayout
+        android:id="@+id/top_bar_reg"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/whitecard2"
+        android:elevation="5dp">
+
+        <TextView
+            android:id="@+id/addevent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="130dp"
+            android:layout_marginTop="50dp"
+            android:text="Add Event"
+            android:textColor="@color/orange"
+            android:textSize="36dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/addevent"
+            android:layout_marginStart="130dp"
+            android:layout_marginTop="3dp"
+            android:text="@string/welcome_text2"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:textStyle="italic" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/registration_form"
+        android:layout_width="368dp"
+        android:layout_height="463dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="51dp"
+        android:layout_marginTop="193dp"
+        android:layout_marginEnd="58dp"
+        android:layout_marginBottom="76dp"
+        android:background="@drawable/whitecard3">
+
+        <TextView
+            android:id="@+id/eventname"
+            android:layout_width="wrap_content"
+            android:layout_height="23dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="26dp"
+            android:layout_marginEnd="173dp"
+            android:layout_marginBottom="413dp"
+            android:text="Event Name"
+            android:textColor="@color/black"
+            android:textSize="14dp" />
+
+
+        <EditText
+            android:id="@+id/editTextEventName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="57dp"
+            android:layout_marginBottom="367dp"
+            android:ems="10"
+            android:hint="Enter Event Name"
+            android:inputType="textPersonName"
+            android:textSize="18dp" />
+
+
+        <TextView
+            android:id="@+id/eventtype"
+            android:layout_width="wrap_content"
+            android:layout_height="23dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="120dp"
+            android:layout_marginEnd="174dp"
+            android:layout_marginBottom="319dp"
+            android:text="Event Type"
+            android:textColor="@color/black"
+            android:textSize="14dp" />
+
+        <EditText
+            android:id="@+id/editTextEventType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="144dp"
+            android:layout_marginEnd="58dp"
+            android:layout_marginBottom="273dp"
+            android:ems="10"
+            android:hint="Enter Event Type"
+            android:inputType="textPersonName"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/Datetext"
+            android:layout_width="wrap_content"
+            android:layout_height="23dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="207dp"
+            android:layout_marginEnd="173dp"
+            android:layout_marginBottom="226dp"
+            android:text="Date"
+            android:textColor="@color/black"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/Date"
+            android:layout_width="132dp"
+            android:layout_height="33dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="238dp"
+            android:layout_marginEnd="145dp"
+            android:layout_marginBottom="191dp"
+            android:text="Date"
+            android:textColor="@color/grey"
+            android:textSize="14dp" />
+
+
+        <TextView
+            android:id="@+id/starttime"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="277dp"
+            android:layout_marginEnd="195dp"
+            android:layout_marginBottom="160dp"
+            android:text="Start Time"
+            android:textColor="@color/black"
+            android:textSize="14dp" />
+
+
+        <EditText
+            android:id="@+id/editTextStartTime"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="304dp"
+            android:layout_marginEnd="55dp"
+            android:layout_marginBottom="120dp"
+            android:ems="10"
+            android:hint="Enter Start Time"
+            android:inputType="textPersonName"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/Duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="360dp"
+            android:layout_marginEnd="195dp"
+            android:layout_marginBottom="73dp"
+            android:text="Duration"
+            android:textColor="@color/black"
+            android:textSize="14dp" />
+
+        <EditText
+            android:id="@+id/editTextDuration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="388dp"
+            android:layout_marginEnd="46dp"
+            android:layout_marginBottom="31dp"
+            android:ems="10"
+            android:hint="Enter Duration of the event"
+            android:inputType="textPersonName"
+            android:textSize="18dp" />
+
+
+    </RelativeLayout>
+</RelativeLayout>
+

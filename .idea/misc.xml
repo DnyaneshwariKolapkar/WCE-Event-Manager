@@ -6,6 +6,7 @@
         <entry key="app/src/main/res/drawable-v24/calendar_whitecard.xml" value="0.284" />
         <entry key="app/src/main/res/drawable-v24/middlewhitecard.xml" value="0.284" />
         <entry key="app/src/main/res/layout/fragment_calendar.xml" value="0.35833333333333334" />
+        <entry key="app/src/main/res/layout/fragment_registration_form.xml" value="0.35" />
       </map>
     </option>
   </component>
