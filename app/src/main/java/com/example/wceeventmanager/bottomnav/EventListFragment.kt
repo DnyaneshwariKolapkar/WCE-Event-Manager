@@ -24,7 +24,7 @@ class EventListFragment : Fragment() {
         mBinding = FragmentEventListBinding.inflate(inflater, container, false)
 
         //In case Api down just comment getData()
-       // getData()
+        getData()
 
         return mBinding.root
     }

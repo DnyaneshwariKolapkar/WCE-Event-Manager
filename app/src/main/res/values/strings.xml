@@ -31,4 +31,35 @@
     <string name="monthly">Monthly</string>
     <string name="weekly">Weekly</string>
     <string name="fab">fab</string>
+    <string name="create_an_event_at_appropriate_time">Create an event at appropriate time!</string>
+    <string name="addevent">Add Event</string>
+    <string name="text1">Area of Inerest</string>
+    <string name="branches">Branches</string>
+    <string name="civil">Civil</string>
+    <string name="mechanical">Mechanical</string>
+    <string name="electrical">Electrical</string>
+    <string name="cse">CSE</string>
+    <string name="it">IT</string>
+    <string name="electronics">Electronics</string>
+    <string name="platform">Platform</string>
+    <string name="hybrid">Hybrid</string>
+    <string name="offline">Offline</string>
+    <string name="online">Online</string>
+    <string name="link_for_meet">Link for meet</string>
+    <string name="link_online_meet_link">Link (Online Meet Link)</string>
+    <string name="venue">Venue</string>
+    <string name="loc">Enter Location (If Event is Offline Mode)</string>
+    <string name="start_time">Start Time</string>
+    <string name="enter_start_time">Enter Start Time</string>
+    <string name="duration">Duration</string>
+    <string name="enter_duration_of_the_event">Enter Duration of the event</string>
+    <string name="date">Date</string>
+    <string name="enter_event_type">Enter Event Type</string>
+    <string name="event_type">Event Type</string>
+    <string name="enter_event_name">Enter Event Name</string>
+    <string name="event_name">Event Name</string>
+    <string name="add_event">Add Event</string>
+    <string name="enter_interest_ex_ml_ai_ds">Enter Interest Ex ML,AI,DS</string>
+    <string name="enter_meet_link">Enter Meet Link</string>
+
 </resources>

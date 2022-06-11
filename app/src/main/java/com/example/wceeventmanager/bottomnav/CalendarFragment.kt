@@ -24,24 +24,6 @@ class CalendarFragment : Fragment() {
         val animationleft = AnimationUtils.loadAnimation(context, R.anim.moveleft)
         binding?.txt1?.startAnimation(animation)
 
-        binding?.btnWeek?.setOnClickListener {
-            binding!!.btnMonth.setBackgroundColor(Color.rgb(255,255,255))
-            binding!!.btnWeek.setBackgroundColor(Color.rgb(255,121,23))
-            binding!!.btnWeek.setTextColor(Color.rgb(255,255,255))
-            binding!!.btnMonth.setTextColor(Color.rgb(128,128,128))
-            binding!!.btnWeek.startAnimation(animation)
-
-
-
-        }
-        binding?.btnMonth?.setOnClickListener {
-            binding!!.btnWeek.setBackgroundColor(Color.rgb(255,255,255))
-            binding!!.btnMonth.setBackgroundColor(Color.rgb(255,121,23))
-            binding!!.btnMonth.setTextColor(Color.rgb(255,255,255))
-            binding!!.btnWeek.setTextColor(Color.rgb(128,128,128))
-            binding!!.btnMonth.startAnimation(animationleft)
-        }
-
 
         return binding?.root
     }

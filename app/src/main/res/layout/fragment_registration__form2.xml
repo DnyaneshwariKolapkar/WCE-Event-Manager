@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    >
+
+    <RelativeLayout
+        android:id="@+id/rl1"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:background="@drawable/whitecard2">
+
+        <TextView
+            android:id="@+id/txt1"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:text="@string/addevent"
+            android:textColor="@color/orange"
+            android:textSize="35sp"
+            android:textStyle="bold|normal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_below="@+id/txt1"
+            android:layout_centerHorizontal="true"
+            android:text="@string/create_an_event_at_appropriate_time"
+            android:textColor="#80000000"
+            android:textSize="13sp" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:gravity="center"
+        android:id="@+id/rl3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl1">
+
+        <RadioButton
+            android:id="@+id/cb1"
+            android:layout_width="26dp"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/orange"
+            android:checked="true"
+            android:clickable="false" />
+
+        <ProgressBar
+            android:id="@+id/pb1"
+            android:layout_toRightOf="@id/cb1"
+            android:layout_centerVertical="true"
+            android:background="@color/white"
+            android:layout_width="200dp"
+            android:max="10"
+            android:clickable="false"
+            android:layout_height="3dp" />
+
+        <RadioButton
+            android:id="@+id/cb"
+            android:layout_width="26dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="15dp"
+            android:layout_toEndOf="@id/pb1"
+            android:buttonTint="@color/white"
+            android:clickable="false" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rl2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl3"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/whitecard3">
+
+        <TextView
+            android:id="@+id/tt1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/font1"
+            android:text="@string/text1"
+            android:textColor="@color/orange"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/EditTextaoi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tt1"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:autofillHints="TODO"
+            android:backgroundTint="@color/orange"
+            android:hint="@string/enter_interest_ex_ml_ai_ds"
+            android:inputType="text"
+            android:textSize="15sp"
+            tools:ignore="LabelFor" />
+
+        <TextView
+            android:id="@+id/tt2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/EditTextaoi"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/font1"
+            android:text="@string/branches"
+            android:textColor="@color/orange"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <CheckBox
+            android:id="@+id/cbCivil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tt2"
+            android:layout_marginStart="20dp"
+            android:text="@string/civil" />
+
+        <CheckBox
+            android:id="@+id/cbmech"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tt2"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@id/cbCivil"
+            android:text="@string/mechanical" />
+
+        <CheckBox
+            android:id="@+id/cbElectrical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tt2"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@id/cbmech"
+            android:text="@string/electrical" />
+
+        <CheckBox
+            android:id="@+id/cbCSE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cbCivil"
+            android:layout_marginStart="20dp"
+            android:text="@string/cse" />
+
+        <CheckBox
+            android:id="@+id/cbIT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cbCivil"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@id/cbCSE"
+            android:text="@string/it" />
+
+        <CheckBox
+            android:id="@+id/cbElectronics"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cbCivil"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@id/cbIT"
+            android:text="@string/electronics" />
+
+        <TextView
+            android:id="@+id/tt3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cbCSE"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/font1"
+            android:text="@string/platform"
+            android:textColor="@color/orange"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:id="@+id/rbgroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tt3">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:ignore="UselessParent">
+
+                <RadioButton
+                    android:id="@+id/rbonline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/online" />
+
+                <RadioButton
+                    android:id="@+id/rboffline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="@string/offline" />
+
+                <RadioButton
+                    android:id="@+id/rbhybrid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="@string/hybrid" />
+            </LinearLayout>
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/tt4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rbgroup"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/font1"
+            android:text="@string/link_online_meet_link"
+            android:textColor="@color/orange"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/EditTextMeetLink"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tt4"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:autofillHints="TODO"
+            android:backgroundTint="@color/orange"
+            android:hint="@string/enter_meet_link"
+            android:inputType="text"
+            android:textSize="15sp"
+            tools:ignore="LabelFor" />
+
+        <TextView
+            android:id="@+id/tt5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/EditTextMeetLink"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/font1"
+            android:text="@string/venue"
+            android:textColor="@color/orange"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/EditTextVenue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tt5"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:autofillHints="TODO"
+            android:backgroundTint="@color/orange"
+            android:hint="@string/loc"
+            android:inputType="text"
+            android:textSize="15sp"
+            tools:ignore="LabelFor" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
