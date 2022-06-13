@@ -8,7 +8,7 @@
     <RelativeLayout
         android:id="@+id/event_card_layout"
         android:layout_width="324dp"
-        android:layout_height="124dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/whitecard3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,48 +38,160 @@
             android:textSize="14sp" />
 
         <RelativeLayout
-            android:id="@+id/tag_1"
+            android:id="@+id/left_line"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            />
+
+        <HorizontalScrollView
+            android:id="@+id/branch_scroll"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/tag_card"
-            android:layout_below="@+id/club_name"
-            android:layout_marginTop="10dp"
+            android:layout_below="@id/club_name"
+            android:layout_toEndOf="@id/left_line"
+            android:layout_toStartOf="@+id/join_btn"
             android:layout_marginStart="20dp"
-            android:paddingHorizontal="5dp">
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="10dp"
+            >
 
-            <TextView
-                android:id="@+id/tag1_text"
+            <LinearLayout
+                android:id="@+id/tag_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="Computer Science"
-                android:textColor="@color/white"
-                android:textSize="10sp"
-                tools:ignore="SmallSp" />
+                android:layout_below="@+id/club_name"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
 
-        </RelativeLayout>
+                <TextView
+                    android:id="@+id/branch1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="branch1"
+                    android:textColor="@color/white"
+                    android:background="@drawable/tag_card"
+                    android:layout_marginStart="5dp"
+                    android:textSize="10sp"
+                    tools:ignore="SmallSp"
+                    android:padding="5dp"
+                    android:layout_weight="1">
+                </TextView>
 
-        <RelativeLayout
+                <TextView
+                    android:id="@+id/branch2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="branch2"
+                    android:textColor="@color/white"
+                    android:background="@drawable/tag_card"
+                    android:textSize="10sp"
+                    tools:ignore="SmallSp"
+                    android:padding="5dp"
+                    android:layout_weight="1">
+                </TextView>
+
+                <TextView
+                    android:id="@+id/branch3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="branc3"
+                    android:textColor="@color/white"
+                    android:background="@drawable/tag_card"
+                    android:textSize="10sp"
+                    tools:ignore="SmallSp"
+                    android:padding="5dp"
+                    android:layout_weight="1">
+                </TextView>
+
+                <TextView
+                    android:id="@+id/branch4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="branch4"
+                    android:textColor="@color/white"
+                    android:background="@drawable/tag_card"
+                    android:textSize="10sp"
+                    tools:ignore="SmallSp"
+                    android:padding="5dp"
+                    android:layout_weight="1">
+                </TextView>
+
+                <TextView
+                    android:id="@+id/branch5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="branch5"
+                    android:textColor="@color/white"
+                    android:background="@drawable/tag_card"
+                    android:textSize="10sp"
+                    tools:ignore="SmallSp"
+                    android:padding="5dp"
+                    android:layout_weight="1">
+                </TextView>
+
+                <TextView
+                    android:id="@+id/branch6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="branch6"
+                    android:textColor="@color/white"
+                    android:background="@drawable/tag_card"
+                    android:textSize="10sp"
+                    tools:ignore="SmallSp"
+                    android:padding="5dp"
+                    android:layout_weight="1">
+                </TextView>
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+        <LinearLayout
             android:id="@+id/tag_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/tag_card"
-            android:layout_below="@+id/club_name"
+            android:layout_below="@+id/branch_scroll"
             android:layout_marginTop="10dp"
-            android:layout_marginStart="120dp"
-            android:paddingHorizontal="5dp">
+            android:layout_marginStart="20dp"
+            android:paddingHorizontal="5dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/tag2_text"
+                android:id="@+id/aoi1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="IT"
-                android:textColor="@color/white"
-                android:textSize="10sp"
                 android:layout_centerInParent="true"
-                tools:ignore="SmallSp" />
+                android:text="aoi1"
+                android:textColor="@color/white"
+                android:background="@drawable/tag_card"
+                android:textSize="12sp"
+                tools:ignore="SmallSp"
+                android:padding="5dp"
+                android:layout_weight="1">
+            </TextView>
 
-        </RelativeLayout>
+            <TextView
+                android:id="@+id/aoi2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="20dp"
+                android:text="aoi2"
+                android:textColor="@color/white"
+                android:background="@drawable/tag_card"
+                android:textSize="12sp"
+                tools:ignore="SmallSp"
+                android:padding="5dp"
+                android:layout_weight="1">
+            </TextView>
+
+        </LinearLayout>
 
         <RelativeLayout
             android:id="@+id/timeline"

@@ -6,13 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.Volley
-import com.example.wceeventmanager.R
 import com.example.wceeventmanager.databinding.FragmentEventListBinding
-import org.json.JSONArray
 
 class EventListFragment : Fragment() {
     private lateinit var mBinding: FragmentEventListBinding
@@ -36,21 +33,36 @@ class EventListFragment : Fragment() {
             for(i in 0 until it.length()){
                 val obj = it.getJSONObject(i)
 
+                // Event name
                 val eventName = obj.getString("eventname")
                 Log.e("eventName", eventName)
                 val clubName = "null"
 
-                val tagsJSON = obj.getJSONArray("branches")
-                val tags = ArrayList<String>()
-                for(j in 0 until tagsJSON.length()){
-                    val str = tagsJSON.getJSONObject(j).getString("branch")
-                    tags.add(str.toString())
+                // Branch tags (if any)
+                val tagsJSONBranch = obj.getJSONArray("branches")
+                val tagsBranch = ArrayList<String>()
+
+                for(j in 0 until tagsJSONBranch.length()){
+                    val str = tagsJSONBranch.getJSONObject(j).getString("branch")
+                    tagsBranch.add(str.toString())
                 }
 
+                // Event tags (if any)
+                val tagsJSONAOI = obj.getJSONArray("areaofinterest")
+                val tagsAOI = ArrayList<String>()
+                for(j in 0 until tagsJSONAOI.length()){
+                    val str = tagsJSONAOI.getJSONObject(j).getString("index")
+                    tagsAOI.add(str.toString())
+                }
+
+                // Event date and time
                 val eventTime = obj.getString("starttime")
                 val eventDate = obj.getString("date")
 
-                listOfEvents.add(Event(eventName, clubName, tags, eventTime, eventDate))
+                // Event mode
+                val eventMode = obj.getString("mode")
+
+                listOfEvents.add(Event(eventName, clubName, tagsBranch, tagsAOI, eventTime, eventDate, eventMode))
             }
 
             val event_recy = mBinding.eventRecyView

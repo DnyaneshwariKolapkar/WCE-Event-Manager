@@ -3,21 +3,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
-    >
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/background">
 
     <RelativeLayout
         android:id="@+id/rl1"
         android:layout_width="match_parent"
-        android:layout_height="130dp"
+        android:layout_height="100dp"
         android:background="@drawable/whitecard2">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/backForm2"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@android:color/transparent"
+            app:icon="@drawable/ic_baseline_arrow_back_24"
+            android:scaleY="1.5"
+            android:scaleX="1.5"
+            app:iconTint="@color/orange" />
 
         <TextView
             android:id="@+id/txt1"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="10dp"
             android:text="@string/addevent"
             android:textColor="@color/orange"
             android:textSize="35sp"
@@ -34,48 +50,49 @@
     </RelativeLayout>
 
 
-    <RelativeLayout
-        android:gravity="center"
-        android:id="@+id/rl3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/rl1">
 
-        <RadioButton
-            android:id="@+id/cb1"
-            android:layout_width="26dp"
-            android:layout_height="wrap_content"
-            android:buttonTint="@color/orange"
-            android:checked="true"
-            android:clickable="false" />
+    <!--    <RelativeLayout-->
+    <!--        android:gravity="center"-->
+    <!--        android:id="@+id/rl3"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_below="@id/rl1">-->
 
-        <ProgressBar
-            android:id="@+id/pb1"
-            android:layout_toRightOf="@id/cb1"
-            android:layout_centerVertical="true"
-            android:background="@color/white"
-            android:layout_width="200dp"
-            android:max="10"
-            android:clickable="false"
-            android:layout_height="3dp" />
+    <!--        <RadioButton-->
+    <!--            android:id="@+id/cb1"-->
+    <!--            android:layout_width="26dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:buttonTint="@color/orange"-->
+    <!--            android:checked="true"-->
+    <!--            android:clickable="false" />-->
 
-        <RadioButton
-            android:id="@+id/cb"
-            android:layout_width="26dp"
-            android:layout_height="20dp"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="15dp"
-            android:layout_toEndOf="@id/pb1"
-            android:buttonTint="@color/white"
-            android:clickable="false" />
-    </RelativeLayout>
+    <!--        <ProgressBar-->
+    <!--            android:id="@+id/pb1"-->
+    <!--            android:layout_toEndOf="@id/cb1"-->
+    <!--            android:layout_centerVertical="true"-->
+    <!--            android:background="@color/white"-->
+    <!--            android:layout_width="200dp"-->
+    <!--            android:max="10"-->
+    <!--            android:clickable="false"-->
+    <!--            android:layout_height="3dp" />-->
+
+    <!--        <RadioButton-->
+    <!--            android:id="@+id/cb"-->
+    <!--            android:layout_width="26dp"-->
+    <!--            android:layout_height="20dp"-->
+    <!--            android:layout_centerVertical="true"-->
+    <!--            android:layout_marginStart="15dp"-->
+    <!--            android:layout_toEndOf="@id/pb1"-->
+    <!--            android:buttonTint="@color/white"-->
+    <!--            android:clickable="false" />-->
+    <!--    </RelativeLayout>-->
 
 
     <RelativeLayout
         android:id="@+id/rl2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/rl3"
+        android:layout_below="@id/rl1"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
@@ -95,24 +112,41 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/EditTextaoi"
-            android:layout_width="match_parent"
+            android:id="@+id/EditTextAOI"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tt1"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:autofillHints="TODO"
             android:backgroundTint="@color/orange"
+            android:fontFamily="@font/font1"
             android:hint="@string/enter_interest_ex_ml_ai_ds"
             android:inputType="text"
+            android:textColor="#660033"
+            android:textColorHint="#660033"
             android:textSize="15sp"
             tools:ignore="LabelFor" />
+
+        <ImageButton
+            android:id="@+id/add_aoi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_add_circle_24"
+            android:scaleX="1.5"
+            android:scaleY="1.5"
+            android:background="@android:color/transparent"
+            android:layout_toEndOf="@+id/EditTextAOI"
+            android:layout_below="@+id/tt1"
+            android:layout_marginTop="9dp"
+            android:layout_marginStart="20dp"
+            />
 
         <TextView
             android:id="@+id/tt2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/EditTextaoi"
+            android:layout_below="@id/EditTextAOI"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/font1"
@@ -277,5 +311,24 @@
             tools:ignore="LabelFor" />
 
     </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/fab_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/rl2"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="-60dp"
+        android:clickable="true"
+        android:contentDescription="@string/fab"
+        android:focusable="true"
+        android:src="@drawable/ic_baseline_check_circle_24"
+        android:background="@android:color/transparent"
+        app:tint="@color/orange"
+        android:scaleY="2"
+        android:scaleX="2"
+        android:scaleType="center"
+        />
 
 </RelativeLayout>
