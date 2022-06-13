@@ -61,5 +61,8 @@
     <string name="add_event">Add Event</string>
     <string name="enter_interest_ex_ml_ai_ds">Enter Interest Ex ML,AI,DS</string>
     <string name="enter_meet_link">Enter Meet Link</string>
+    <string name="tags_toast">Only 2 tags are allowed</string>
+    <string name="empty_tag">A tag shouldn\'t be empty.</string>
+    <string name="duplicate_tag">Tag already exists</string>
 
 </resources>
