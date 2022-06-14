@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
 import android.widget.Toast
-import androidx.core.widget.doOnTextChanged
 import com.example.wceeventmanager.Retrofit.ApiInterface
 import com.example.wceeventmanager.Retrofit.RetrofitInstance
 import com.example.wceeventmanager.Retrofit.SignInBody
@@ -19,6 +18,7 @@ import retrofit2.Response
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
@@ -65,18 +65,20 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun onLogin() {
-//        val validEmail = binding.emailTILLog.helperText  == null
-//        val passTxt = binding.passwordEditTextLog.text.toString()
-//
-//        if(validEmail  && passTxt.length >= 8)
+        val validEmail = binding.emailTILLog.helperText  == null
+        val passTxt = binding.passwordEditTextLog.text.toString()
+
+        if(validEmail  && passTxt.length >= 8)
            signin(email = binding.emailEditTextLog.text.toString(), password = binding.passwordEditTextLog.text.toString())
-//        else
-//            invalidform()
+        else
+            invalidform()
     }
 
     private fun invalidform() {
-        var emailLen = binding.emailEditTextLog.length()
-        var passLen = binding.passwordEditTextLog.length()
+
+        val emailLen = binding.emailEditTextLog.length()
+
+        val passLen = binding.passwordEditTextLog.length()
         if(emailLen == 0 && passLen == 0){
             Toast.makeText(this,"Invalid Username or password", Toast.LENGTH_LONG).show()
         }
@@ -102,7 +104,7 @@ class LoginActivity : AppCompatActivity() {
 
                     startActivity(Intent(applicationContext, AdminHomeActivity::class.java))
                 } else {
-                    Toast.makeText(this@LoginActivity, "Login failed!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@LoginActivity, "Invalid Username or password!", Toast.LENGTH_SHORT).show()
                 }
             }
         })

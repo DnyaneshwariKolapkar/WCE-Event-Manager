@@ -32,10 +32,17 @@ class RegistrationFormTwoFragment : Fragment() {
         val addAOI = binding?.addAoi
         val meetLink = binding?.EditTextMeetLink
         val venue = binding?.EditTextVenue
+        val nextBtn = binding?.fabNext
 
         val lengthHandlerToast = layoutInflater.inflate(R.layout.custom_toast_tag_length, null)
         val duplicateHandlerToast = layoutInflater.inflate(R.layout.custom_toast_duplicate_tag, null)
         val emptyHandlerToast = layoutInflater.inflate(R.layout.custom_toast_empty_tag, null)
+        if(binding?.rbonline?.isChecked == true){
+            binding?.EditTextMeetLink?.isEnabled = true
+        }
+        nextBtn?.setOnClickListener {
+
+        }
 
         addAOI?.setOnClickListener(View.OnClickListener {
            if(tagsTopic.size > 1)
@@ -48,7 +55,8 @@ class RegistrationFormTwoFragment : Fragment() {
                binding?.EditTextAOI?.text?.clear()
            }else{
                val aoi = binding?.EditTextAOI?.text.toString()
-                Toast.makeText(requireContext(), aoi, Toast.LENGTH_SHORT).show()
+//                Toast.makeText(requireContext(), aoi, Toast.LENGTH_SHORT).show()
+
                // Check if the AOI is already in the list
                 if(tagsTopic.contains(aoi))
                 {
@@ -66,6 +74,7 @@ class RegistrationFormTwoFragment : Fragment() {
                         view = emptyHandlerToast
                     }.show()
                }
+
                 else{
                     // trim and add
                     aoi.trim()

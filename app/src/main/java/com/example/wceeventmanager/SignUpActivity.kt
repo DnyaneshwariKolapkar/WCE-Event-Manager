@@ -4,10 +4,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
 import android.widget.Toast
+import androidx.core.widget.doOnTextChanged
 import com.example.wceeventmanager.Retrofit.ApiInterface
 import com.example.wceeventmanager.Retrofit.RetrofitInstance
 import com.example.wceeventmanager.Retrofit.UserBody
 import com.example.wceeventmanager.databinding.ActivitySignUpBinding
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.combine
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
@@ -15,6 +18,12 @@ import retrofit2.Response
 
 class SignUpActivity : AppCompatActivity() {
     lateinit var binding: ActivitySignUpBinding
+
+    //created mutable strings to store values
+    val email = MutableStateFlow("")
+    val password = MutableStateFlow("")
+    val name = MutableStateFlow("")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySignUpBinding.inflate(layoutInflater)
@@ -24,6 +33,35 @@ class SignUpActivity : AppCompatActivity() {
         passwordFocusListener()
         nameFocusListener()
 
+        //get text from edittext and set to strings
+        with(binding) {
+
+            emailEditText.doOnTextChanged { text, start, before, count ->
+//                if(!Patterns.EMAIL_ADDRESS.matcher(text.toString()).matches()){
+//                    binding.emailTIL.helperText = "Invalid Email Address"
+//                }
+//                else{
+//                    binding.emailTIL.helperText = ""
+//                }
+                email.value = text.toString()
+            }
+            passwordEditText.doOnTextChanged { text, start, before, count ->
+                if(text?.length!! < 8){
+                    binding.passwordTIL.helperText = "Minimum 8 Character Password"
+                }
+                else if(text.isEmpty()){
+                    binding.passwordTIL.helperText = "Can't Empty"
+                }
+                else{
+                    binding.passwordTIL.helperText = ""
+                }
+                password.value = text.toString()
+            }
+                nameEditText.doOnTextChanged { text, start, before, count ->
+                name.value = text.toString()
+            }
+        }
+
         binding.btnsignup2.setOnClickListener{
             onsignup()
         }
@@ -31,40 +69,16 @@ class SignUpActivity : AppCompatActivity() {
         supportActionBar!!.hide()
     }
 
-    private fun nameFocusListener() {
-        binding.nameEditText.setOnFocusChangeListener { _, focused ->
-
-            if(!focused){
-                if(binding.nameEditText.text?.isEmpty() == true){
-                    binding.nameTIL.helperText = "Can't Be Empty"
-                    return@setOnFocusChangeListener
-                }
-                else{
-                    binding.nameTIL.helperText = validName()
-                }
-            }
-        }
-    }
-
-    private fun validName(): String? {
-        var name =binding.nameEditText.text
-        if(name?.equals("abc") == true){
-            return "Enter correct name"
-        }
-        return null
-
-    }
 
     private fun onsignup() {
-//        val validEmail = binding.emailTIL.helperText  == null
-//        val passTxt = binding.passwordEditText.text.toString()
-//        val validName = binding.nameTIL.helperText  == null
-//
-//
-//        if(validEmail && validName && passTxt.length >= 8)
+        val validEmail = binding.emailEditText.text
+        val passTxt = binding.passwordEditText.text.toString()
+        val name = binding.nameEditText.text.toString()
+
+        if(Patterns.EMAIL_ADDRESS.matcher(validEmail.toString()).matches() && passTxt.length >= 8 && name.length>1)
             signup(email = binding.emailEditText.text.toString(), name = binding.nameEditText.text.toString(), password = binding.passwordEditText.text.toString())
-//        else
-//            invalidform()
+        else
+            invalidform()
     }
 
     private fun signup(email: String, name: String, password: String) {
@@ -94,11 +108,9 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     private fun invalidform() {
-        Toast.makeText(this,"Fill Form Correctly", Toast.LENGTH_LONG).show()
+        Toast.makeText(this,"Please Fill All Fields !!", Toast.LENGTH_LONG).show()
         return
     }
-
-
 
     private fun emailFocusListener() {
         binding.emailEditText.setOnFocusChangeListener { _, focused ->
@@ -144,5 +156,29 @@ class SignUpActivity : AppCompatActivity() {
             return "Minimum 8 Character Password !!"
         }
         return null
+    }
+
+    private fun nameFocusListener() {
+        binding.nameEditText.setOnFocusChangeListener { _, focused ->
+
+            if(!focused){
+                if(binding.nameEditText.text?.isEmpty() == true){
+                    binding.nameTIL.helperText = "Can't Be Empty"
+                    return@setOnFocusChangeListener
+                }
+                else{
+                    binding.nameTIL.helperText = validName()
+                }
+            }
+        }
+    }
+
+    private fun validName(): String? {
+        var name =binding.nameEditText.text
+        if(name?.equals("abc") == true){
+            return "Enter correct name"
+        }
+        return null
+
     }
 }

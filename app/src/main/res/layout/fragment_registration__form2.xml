@@ -123,8 +123,6 @@
             android:fontFamily="@font/font1"
             android:hint="@string/enter_interest_ex_ml_ai_ds"
             android:inputType="text"
-            android:textColor="#660033"
-            android:textColorHint="#660033"
             android:textSize="15sp"
             tools:ignore="LabelFor" />
 
@@ -132,15 +130,14 @@
             android:id="@+id/add_aoi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_baseline_add_circle_24"
+            android:layout_below="@+id/tt1"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="9dp"
+            android:layout_toEndOf="@+id/EditTextAOI"
+            android:background="@android:color/transparent"
             android:scaleX="1.5"
             android:scaleY="1.5"
-            android:background="@android:color/transparent"
-            android:layout_toEndOf="@+id/EditTextAOI"
-            android:layout_below="@+id/tt1"
-            android:layout_marginTop="9dp"
-            android:layout_marginStart="20dp"
-            />
+            android:src="@drawable/ic_baseline_add_circle_24" />
 
         <TextView
             android:id="@+id/tt2"
@@ -221,16 +218,12 @@
             android:textStyle="bold" />
 
         <RadioGroup
-            android:id="@+id/rbgroup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tt3">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:ignore="UselessParent">
-
+                    android:id="@+id/rbgroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tt3"
+                    android:orientation="horizontal"
+                    >
                 <RadioButton
                     android:id="@+id/rbonline"
                     android:layout_width="wrap_content"
@@ -251,9 +244,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
                     android:text="@string/hybrid" />
-            </LinearLayout>
 
-        </RadioGroup>
+                </RadioGroup>
+
+
+
 
         <TextView
             android:id="@+id/tt4"
@@ -279,6 +274,7 @@
             android:backgroundTint="@color/orange"
             android:hint="@string/enter_meet_link"
             android:inputType="text"
+            android:enabled="false"
             android:textSize="15sp"
             tools:ignore="LabelFor" />
 
@@ -307,28 +303,26 @@
             android:backgroundTint="@color/orange"
             android:hint="@string/loc"
             android:inputType="text"
+
             android:textSize="15sp"
             tools:ignore="LabelFor" />
 
     </RelativeLayout>
 
-    <ImageButton
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
         android:layout_below="@+id/rl2"
-        android:layout_marginEnd="30dp"
-        android:layout_marginTop="-60dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="-100dp"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="@color/orange"
         android:clickable="true"
         android:contentDescription="@string/fab"
         android:focusable="true"
-        android:src="@drawable/ic_baseline_check_circle_24"
-        android:background="@android:color/transparent"
-        app:tint="@color/orange"
-        android:scaleY="2"
-        android:scaleX="2"
-        android:scaleType="center"
-        />
+        app:backgroundTint="@color/orange"
+        android:src="@drawable/ic_baseline_check_24"
+        app:tint="@color/white" />
 
 </RelativeLayout>

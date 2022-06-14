@@ -22,15 +22,18 @@ class CalendarFragment : Fragment() {
     ): View? {
         mbinding = FragmentCalendarBinding.inflate(inflater, container, false)
 
-        val animation =
-            AnimationUtils.loadAnimation(context, com.example.wceeventmanager.R.anim.move)
+        val animation = AnimationUtils.loadAnimation(context, com.example.wceeventmanager.R.anim.move)
         binding?.txt1?.startAnimation(animation)
+
+        var calender= binding?.cal
 
         binding?.fab?.setOnClickListener {
 //            val registrationForm = Registration_Form()
 //            val transaction : FragmentTransaction = requireFragmentManager().beginTransaction()
 //            transaction.replace(R.id.main_fragment,registrationForm)
 //            transaction.commit()
+
+            
             val fragment: Fragment = RegistrationFormOneFragment()
             val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
             val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
