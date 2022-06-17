@@ -1,5 +1,6 @@
 package com.example.wceeventmanager
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import androidx.fragment.app.Fragment
@@ -7,6 +8,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.example.wceeventmanager.bottomnav.AddEvent
+import com.example.wceeventmanager.bottomnav.FetchEvent
 import com.example.wceeventmanager.databinding.FragmentRegistrationForm2Binding
 
 
@@ -20,9 +23,10 @@ class RegistrationFormTwoFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         mbinding= FragmentRegistrationForm2Binding.inflate(inflater,container,false)
+        val prevData = arguments
 
         // Tags array - Area of Interest + Branches
         val tagsTopic = ArrayList<String>()
@@ -32,6 +36,9 @@ class RegistrationFormTwoFragment : Fragment() {
         val addAOI = binding?.addAoi
         val meetLink = binding?.EditTextMeetLink
         val venue = binding?.EditTextVenue
+
+        // Confirm button
+        val confirm = binding?.fabConfirm
 
         val lengthHandlerToast = layoutInflater.inflate(R.layout.custom_toast_tag_length, null)
         val duplicateHandlerToast = layoutInflater.inflate(R.layout.custom_toast_duplicate_tag, null)
@@ -114,6 +121,11 @@ class RegistrationFormTwoFragment : Fragment() {
 
         if(tagsBranch.size == 6) allBranch = true
 
+        var eventName = prevData?.getString("eventName")
+        var eventType = prevData?.getString("eventType")
+        var eventDate = prevData?.getString("eventDate")
+        var startTime = prevData?.getString("startTime")
+        var duration = prevData?.getString("duration")
 
         // Back Button - Back to Registration Form 1
         val backBtn = binding?.backForm2
@@ -122,9 +134,11 @@ class RegistrationFormTwoFragment : Fragment() {
             requireActivity().supportFragmentManager.beginTransaction().replace(R.id.main_fragment, fragment).commit()
         })
 
+        // Adding data to the database
+        
+
 
         return mbinding!!.root
     }
-
 
 }

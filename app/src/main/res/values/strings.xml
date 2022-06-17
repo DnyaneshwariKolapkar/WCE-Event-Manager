@@ -64,5 +64,6 @@
     <string name="tags_toast">Only 2 tags are allowed</string>
     <string name="empty_tag">A tag shouldn\'t be empty.</string>
     <string name="duplicate_tag">Tag already exists</string>
+    <string name="enter_duration_of_event_in_hours">Enter duration of event in hours</string>
 
 </resources>

@@ -200,11 +200,11 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="0dp"
             android:layout_marginEnd="20dp"
-            android:autofillHints=""
             android:layout_marginBottom="20dp"
+            android:autofillHints=""
             android:backgroundTint="@color/orange"
             android:ems="10"
-            android:hint="@string/enter_duration_of_the_event"
+            android:hint = "@string/enter_duration_of_event_in_hours"
             android:inputType="textPersonName"
             android:textSize="18sp" />
     </RelativeLayout>

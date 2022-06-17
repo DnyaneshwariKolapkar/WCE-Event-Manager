@@ -1,3 +1,0 @@
-package com.example.wceeventmanager.bottomnav
-
-data class Event (var eventName: String, var clubName: String, var tagsBranch: ArrayList<String>, var tagsAOI: ArrayList<String>, var eventTime: String, var eventDate: String, var eventMode: String)

@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../../layout/custom_preview.xml" value="0.2694746376811594" />
         <entry key="app/src/main/res/drawable-v24/calendar_whitecard.xml" value="0.284" />
         <entry key="app/src/main/res/drawable-v24/ic_baseline_error_outline_24.xml" value="0.2975" />
         <entry key="app/src/main/res/drawable-v24/middlewhitecard.xml" value="0.284" />
@@ -19,6 +20,7 @@
         <entry key="app/src/main/res/layout/event_list.xml" value="0.348731884057971" />
         <entry key="app/src/main/res/layout/fragment_calendar.xml" value="0.35833333333333334" />
         <entry key="app/src/main/res/layout/fragment_confused_screens.xml" value="0.348731884057971" />
+        <entry key="app/src/main/res/layout/fragment_event_list.xml" value="0.348731884057971" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.348731884057971" />
         <entry key="app/src/main/res/layout/fragment_registration__form2.xml" value="0.348731884057971" />
         <entry key="app/src/main/res/layout/fragment_registration_form.xml" value="0.348731884057971" />

@@ -27,6 +27,7 @@ class RegistrationFormOneFragment : Fragment() {
         val eventType = binding?.eventtype.toString()
         val startTime = binding?.starttime.toString()
         val duration = binding?.Duration.toString()
+        val eventDate = binding?.Date.toString()
 
         // Next button - RegistrationFormTwoFragment
         val nextBTN = binding?.fabNext
@@ -38,6 +39,7 @@ class RegistrationFormOneFragment : Fragment() {
             bundle.putString("eventType", eventType)
             bundle.putString("startTime", startTime)
             bundle.putString("duration", duration)
+            bundle.putString("eventDate", eventDate)
             fragment.arguments = bundle
 
             activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.main_fragment, fragment)?.addToBackStack(null)?.commit()
