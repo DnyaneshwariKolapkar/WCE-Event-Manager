@@ -135,7 +135,7 @@ class RegistrationFormTwoFragment : Fragment() {
         })
 
         // Adding data to the database
-        
+
 
 
         return mbinding!!.root
