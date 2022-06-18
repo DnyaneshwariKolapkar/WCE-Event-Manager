@@ -3,17 +3,21 @@ package com.example.wceeventmanager
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.util.Patterns
 import android.widget.Toast
+import com.android.volley.toolbox.JsonArrayRequest
 import com.example.wceeventmanager.Retrofit.ApiInterface
 import com.example.wceeventmanager.Retrofit.RetrofitInstance
 import com.example.wceeventmanager.Retrofit.SignInBody
 import com.example.wceeventmanager.bottomnav.AdminHomeActivity
+import com.example.wceeventmanager.bottomnav.Profile
 import com.example.wceeventmanager.databinding.ActivityLoginBinding
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+
 
 class LoginActivity : AppCompatActivity() {
 
@@ -24,8 +28,25 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val bundle = Bundle()
+        var isGuest = false
+
         emailFocusListener()
         passwordFocusListener()
+
+        binding.signText.setOnClickListener {
+            startActivity(Intent(applicationContext,SignUpActivity::class.java))
+        }
+        //Guest User
+        binding.cagText.setOnClickListener {
+            isGuest = true
+
+            bundle.putBoolean("isGuest", isGuest)
+
+            intent = Intent(this@LoginActivity, AdminHomeActivity::class.java)
+            intent.putExtras(bundle)
+            startActivity(intent)
+        }
 
         binding.btnLogin2.setOnClickListener {
             onLogin()
@@ -101,13 +122,34 @@ class LoginActivity : AppCompatActivity() {
             override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
                 if (response.code() == 200) {
                     Toast.makeText(this@LoginActivity, "Login success!", Toast.LENGTH_SHORT).show()
+                    getUserInfo()
 
                     startActivity(Intent(applicationContext, AdminHomeActivity::class.java))
                 } else {
-                    Toast.makeText(this@LoginActivity, "Invalid Username or password!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@LoginActivity, response.body().toString(), Toast.LENGTH_SHORT).show()
                 }
             }
         })
+    }
+
+    private fun getUserInfo() {
+        var userInfo = ArrayList<Profile>()
+        val apiReq = JsonArrayRequest("https://walchand-event-organizer.herokuapp.com/user/me", {
+            for (i in 0 until it.length()) {
+                val obj = it.getJSONObject(i)
+                val name = obj.getString("name")
+                val email = obj.getString("email")
+                val isVerified = obj.getBoolean("isVerified")
+                val isAdminUser = obj.getBoolean("isAdminUser")
+                val isClubUser = obj.getBoolean("isClubUser")
+
+                Log.e("name",name)
+             userInfo.add(Profile(name,email,isVerified,isAdminUser,isClubUser))
+            }
+        },{
+
+        })
+
     }
 
 

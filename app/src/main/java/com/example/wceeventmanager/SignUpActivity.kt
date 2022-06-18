@@ -1,5 +1,6 @@
 package com.example.wceeventmanager
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
@@ -8,6 +9,7 @@ import androidx.core.widget.doOnTextChanged
 import com.example.wceeventmanager.Retrofit.ApiInterface
 import com.example.wceeventmanager.Retrofit.RetrofitInstance
 import com.example.wceeventmanager.Retrofit.UserBody
+import com.example.wceeventmanager.bottomnav.AdminHomeActivity
 import com.example.wceeventmanager.databinding.ActivitySignUpBinding
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.combine
@@ -32,6 +34,13 @@ class SignUpActivity : AppCompatActivity() {
         emailFocusListener()
         passwordFocusListener()
         nameFocusListener()
+
+        binding.signText.setOnClickListener {
+            startActivity(Intent(applicationContext,LoginActivity::class.java))
+        }
+        binding.cagText.setOnClickListener {
+            startActivity(Intent(applicationContext,AdminHomeActivity::class.java))
+        }
 
         //get text from edittext and set to strings
         with(binding) {
@@ -99,9 +108,11 @@ class SignUpActivity : AppCompatActivity() {
                     Toast.makeText(this@SignUpActivity, "Registration success!", Toast.LENGTH_SHORT)
                         .show()
                 }
+                else if(response.code() == 401){
+                    Toast.makeText(this@SignUpActivity,"Email already exists", Toast.LENGTH_SHORT).show()
+                }
                 else{
-                    Toast.makeText(this@SignUpActivity, "Registration failed!", Toast.LENGTH_SHORT)
-                        .show()
+                    Toast.makeText(this@SignUpActivity,"Something went wrong", Toast.LENGTH_SHORT).show()
                 }
             }
         })

@@ -3,6 +3,7 @@ package com.example.wceeventmanager.bottomnav
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
+import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.Navigation.findNavController
 import androidx.navigation.findNavController
@@ -16,25 +17,39 @@ import nl.joery.animatedbottombar.AnimatedBottomBar
 
 class AdminHomeActivity : AppCompatActivity() {
     lateinit var binding: ActivityAdminHomeBinding
+    var appBarConfiguration : AppBarConfiguration?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAdminHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // val bundle = Bundle()
+        val bundle = intent.extras
 
         val navView : BottomNavigationView = binding.bottomNavbar
 
         val navController = findNavController(R.id.main_fragment)
 
-        val appBarConfiguration = AppBarConfiguration(
+        appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.home, R.id.calender, R.id.profile
             )
+
         )
+        var isGuest = bundle?.getBoolean("isGuest")
+        if(isGuest == true){
+            navView.menu.removeItem(R.id.profile)
 
-        setupActionBarWithNavController(navController, appBarConfiguration)
+            Toast(this).apply {
+                duration = Toast.LENGTH_SHORT
+                view = layoutInflater.inflate(R.layout.custom_toast_guest_welcome,null)
+
+            }.show()
+        }
+//        else {
+        setupActionBarWithNavController(navController, appBarConfiguration!!)
         navView.setupWithNavController(navController)
-
+//        }
         supportActionBar!!.hide()
     }
 }

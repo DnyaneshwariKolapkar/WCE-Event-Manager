@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".bottomnav.NormalUserProfile"
     android:background="@drawable/background">
+
     <RelativeLayout
         android:id="@+id/top_bar_reg"
         android:layout_width="match_parent"

@@ -36,7 +36,7 @@ class ViewPagerScreens : AppCompatActivity() {
         activity = this
         preference = getSharedPreferences("introSlider", Context.MODE_PRIVATE)
         if(!preference.getBoolean(pref_show_intro,true)){
-            startActivity(Intent(activity,WelcomeActivity ::class.java))
+            startActivity(Intent(activity,LoginActivity ::class.java))
             finish()
         }
 
@@ -67,7 +67,7 @@ class ViewPagerScreens : AppCompatActivity() {
                 if(position == adapter.list.size-1){
                     btnNext.text = "Get Started"
                     btnNext.setOnClickListener{
-                        startActivity(Intent(activity,WelcomeActivity ::class.java))
+                        startActivity(Intent(activity,LoginActivity ::class.java))
                         finish()
                         val editor = preference.edit()
                         editor.putBoolean(pref_show_intro,false)

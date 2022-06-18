@@ -47,6 +47,10 @@
             android:text="@string/create_an_event_at_appropriate_time"
             android:textColor="#80000000"
             android:textSize="13sp" />
+
+    </RelativeLayout>
+
+
     </RelativeLayout>
 
     <RelativeLayout
@@ -179,13 +183,13 @@
             android:textStyle="bold" />
 
         <RadioGroup
-                    android:id="@+id/rbgroup"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/tt3"
-                    android:orientation="horizontal"
-                    >
-                <RadioButton
+            android:id="@+id/rbgroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tt3"
+            android:orientation="horizontal"
+            >
+            <RadioButton
                     android:id="@+id/rbonline"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -206,7 +210,7 @@
                     android:layout_marginStart="5dp"
                     android:text="@string/hybrid" />
 
-                </RadioGroup>
+        </RadioGroup>
 
 
 

@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
@@ -25,16 +26,24 @@ class CalendarFragment : Fragment() {
         val animation = AnimationUtils.loadAnimation(context, com.example.wceeventmanager.R.anim.move)
         binding?.txt1?.startAnimation(animation)
 
-        var calender= binding?.cal
+        val calender= binding?.cal
+        var date = ""
+
+        val bundle = Bundle()
+
+        calender?.setOnDateChangeListener { calendarView, year, month, dayOfMonth ->
+            date = "$dayOfMonth / $month / $year"
+        }
 
         binding?.fab?.setOnClickListener {
-//            val registrationForm = Registration_Form()
-//            val transaction : FragmentTransaction = requireFragmentManager().beginTransaction()
-//            transaction.replace(R.id.main_fragment,registrationForm)
-//            transaction.commit()
 
-            
+            Toast.makeText(context,date,Toast.LENGTH_LONG).show()
             val fragment: Fragment = RegistrationFormOneFragment()
+            //take date from calenderView and send to RegistrationFormOne
+            bundle.putString("date",date)
+            fragment.arguments = bundle
+
+
             val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
             val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
             fragmentTransaction.replace(com.example.wceeventmanager.R.id.main_fragment, fragment)

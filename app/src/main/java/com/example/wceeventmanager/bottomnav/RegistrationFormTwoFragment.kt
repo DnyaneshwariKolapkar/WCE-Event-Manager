@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import android.widget.Toast
 import com.android.volley.RequestQueue
 import com.android.volley.Response
@@ -31,6 +32,10 @@ class RegistrationFormTwoFragment : Fragment() {
         // Inflate the layout for this fragment
         mbinding= FragmentRegistrationForm2Binding.inflate(inflater,container,false)
         val prevData = arguments
+
+        //Added animation
+        val animation = AnimationUtils.loadAnimation(context, com.example.wceeventmanager.R.anim.move)
+        binding?.txt1?.startAnimation(animation)
 
         // Tags array - Area of Interest + Branches
         val tagsTopic = ArrayList<String>()
