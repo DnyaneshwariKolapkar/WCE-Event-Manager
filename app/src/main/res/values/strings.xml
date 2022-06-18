@@ -64,6 +64,13 @@
     <string name="tags_toast">Only 2 tags are allowed</string>
     <string name="empty_tag">A tag shouldn\'t be empty.</string>
     <string name="duplicate_tag">Tag already exists</string>
-    <string name="enter_duration_of_event_in_hours">Enter duration of event in hours</string>
+    <string name="club_service">Club Service</string>
+    <string name="textview">TextView</string>
+    <string name="select_event">Select Event</string>
 
+    <string-array name="events">
+        <item>Mega Event</item>
+        <item>Club Service</item>
+        <item>Event</item>
+    </string-array>
 </resources>
