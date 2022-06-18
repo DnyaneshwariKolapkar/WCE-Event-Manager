@@ -1,5 +1,7 @@
 package com.example.wceeventmanager
 
+import android.graphics.Color
+import android.graphics.Typeface
 import android.os.Bundle
 import android.text.TextUtils
 import androidx.fragment.app.Fragment
@@ -30,16 +32,28 @@ class RegistrationFormOneFragment : Fragment() {
         val animation = AnimationUtils.loadAnimation(context, R.anim.move)
         mbinding?.txt1?.startAnimation(animation)
 
+        //get date from calender fragment
+        val date = binding.Date
+        val args = this.arguments
+        val selecteddate = args?.get("date")
+
+        date.text = selecteddate.toString()
+        date.setTextColor(Color.BLACK)
+        date.typeface = Typeface.DEFAULT_BOLD
+
+
         val eventName = binding.EditTextEventName.text.toString()
         var eventType = ""
         val startTime = binding.EditTextStartTime.text.toString()
         val duration = binding.EditTextDuration.text.toString()
-//        binding.DropDownMenuBar.addTextChangedListener {
-//            eventType = binding.DropDownMenuBar.text.toString()
-//        }
+        binding.DropDownMenuBar.addTextChangedListener {
+            eventType = binding.DropDownMenuBar.text.toString()
+        }
 
         //dropdownMenu for select event type
-
+        val eventtypes = resources.getStringArray(R.array.events)
+        val arrayAdapter = ArrayAdapter(requireContext(),R.layout.dropdownmenu,eventtypes)
+        binding.DropDownMenuBar.setAdapter(arrayAdapter)
 
         // Next button - RegistrationFormTwoFragment
         val nextBTN = mbinding?.fabNext
@@ -53,7 +67,7 @@ class RegistrationFormOneFragment : Fragment() {
                 return@setOnClickListener
             }
             else{
-                Toast.makeText(context,eventType,Toast.LENGTH_SHORT).show()
+
                 bundle.putString("eventName", eventName)
                 //  bundle.putString("eventType", eventType)
                 bundle.putString("startTime", startTime)

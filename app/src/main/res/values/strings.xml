@@ -71,6 +71,7 @@
     <string name="don_t_have_an_account">Don\'t have an account?</string>
     <string name="or">OR</string>
     <string name="already_have_an_account">Already have an account?</string>
+    <string name="text">text</string>
 
 
     <string-array name="events">
@@ -78,4 +79,5 @@
         <item>Club Service</item>
         <item>Event</item>
     </string-array>
+
 </resources>

@@ -15,7 +15,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/backForm1"
-           app:icon="@drawable/ic_arrow_back"
+            app:icon="@drawable/ic_arrow_back"
             app:iconTint="@color/orange"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
@@ -99,39 +99,34 @@
             android:textSize="14sp"
             android:textStyle="bold" />
 
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+            android:id="@+id/TILEventType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_below="@id/eventtype"
+            android:layout_marginStart="20dp"
+
+            >
+            <AutoCompleteTextView
+                android:id="@+id/DropDownMenuBar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/select_event"
+                android:inputType="none"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
 
 
-<!--        <EditText-->
-<!--            android:id="@+id/EditTextEventType"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_below="@+id/eventtype"-->
-<!--            android:layout_marginStart="20dp"-->
-<!--            android:layout_marginEnd="20dp"-->
-<!--            android:autofillHints="TODO"-->
-<!--            android:backgroundTint="@color/orange"-->
-<!--            android:fontFamily="@font/font1"-->
-<!--            android:hint="@string/enter_event_name"-->
-<!--            android:inputType="text"-->
-<!--            android:textSize="15sp"-->
-<!--            tools:ignore="LabelFor" />-->
-<!--        <Spinner-->
-<!--            android:id="@+id/SpinnerEventType"-->
-<!--            android:layout_width="200dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_below="@id/eventtype"-->
-<!--            android:layout_marginStart="20dp"-->
-<!--            android:background="@drawable/border"-->
-<!--            android:entries="@array/events"-->
-
-<!--            />-->
 
 
         <TextView
             android:id="@+id/Datetext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/eventtype"
+            android:layout_below="@id/TILEventType"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/font1"
