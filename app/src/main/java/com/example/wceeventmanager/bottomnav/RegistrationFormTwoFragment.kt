@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import android.widget.Toast
 import com.example.wceeventmanager.databinding.FragmentRegistrationForm2Binding
 
@@ -23,6 +24,10 @@ class RegistrationFormTwoFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         mbinding= FragmentRegistrationForm2Binding.inflate(inflater,container,false)
+
+        //Added animation
+        val animation = AnimationUtils.loadAnimation(context, com.example.wceeventmanager.R.anim.move)
+        binding?.txt1?.startAnimation(animation)
 
         // Tags array - Area of Interest + Branches
         val tagsTopic = ArrayList<String>()
@@ -130,7 +135,6 @@ class RegistrationFormTwoFragment : Fragment() {
             val fragment = RegistrationFormOneFragment()
             requireActivity().supportFragmentManager.beginTransaction().replace(R.id.main_fragment, fragment).commit()
         })
-
 
         return mbinding!!.root
     }

@@ -15,6 +15,7 @@ import com.example.wceeventmanager.databinding.FragmentEventListBinding
 class RecyclerAdapter(private var eventList: ArrayList<Event>, var context: Context) : RecyclerView.Adapter<RecyclerAdapter.myViewHolder>() {
 
     class myViewHolder(view: View) : RecyclerView.ViewHolder(view){
+
         var eventName = view.findViewById<TextView>(R.id.event_name)
         var clubName = view.findViewById<TextView>(R.id.club_name)
         var eventTime = view.findViewById<TextView>(R.id.event_time)
@@ -36,9 +37,8 @@ class RecyclerAdapter(private var eventList: ArrayList<Event>, var context: Cont
     }
 
     override fun onBindViewHolder(holder: RecyclerAdapter.myViewHolder, position: Int) {
+
         var model = eventList[position]
-
-
 
         holder.eventName.text = model.eventName
         holder.clubName.text = model.clubName

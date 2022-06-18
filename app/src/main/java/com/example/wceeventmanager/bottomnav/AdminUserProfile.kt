@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import com.example.wceeventmanager.R
 import com.example.wceeventmanager.databinding.FragmentAdminUserProfileBinding
 import com.example.wceeventmanager.databinding.FragmentClubUserProfileBinding
+import io.getstream.avatarview.coil.loadImage
 
 
 class AdminUserProfile : Fragment() {
@@ -21,7 +22,7 @@ class AdminUserProfile : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         mbinding= FragmentAdminUserProfileBinding.inflate(inflater,container,false)
-
+        mbinding!!.avatarView2.loadImage(R.drawable.man)
 
 
         return mbinding!!.root

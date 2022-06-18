@@ -33,7 +33,6 @@ class CalendarFragment : Fragment() {
 //            transaction.replace(R.id.main_fragment,registrationForm)
 //            transaction.commit()
 
-            
             val fragment: Fragment = RegistrationFormOneFragment()
             val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
             val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()

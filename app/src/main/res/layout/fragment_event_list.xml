@@ -10,42 +10,42 @@
     <RelativeLayout
         android:id="@+id/top_bar"
         android:layout_width="match_parent"
-        android:layout_height="130dp"
-        android:background="@drawable/whitecard2"
+        android:layout_height="100dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"
+        android:background="@drawable/whitecard2"
         android:elevation="5dp">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profile_image"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:src="@drawable/ben_sweet"
-            android:layout_marginTop="50dp"
-            android:layout_marginStart="50dp"/>
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ben_sweet" />
 
         <TextView
             android:id="@+id/welcome_text1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="130dp"
+            android:layout_marginTop="20dp"
             android:text="@string/welcome_texty"
-            android:textStyle="bold|italic"
             android:textColor="@color/orange"
             android:textSize="26sp"
-            android:layout_marginTop="50dp"
-            android:layout_marginStart="130dp"/>
+            android:textStyle="bold|italic" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/welcome_text1"
+            android:layout_marginStart="130dp"
+            android:layout_marginTop="5dp"
             android:text="@string/welcome_text2"
-            android:textStyle="italic"
             android:textColor="@color/black"
             android:textSize="12sp"
-            android:layout_below="@+id/welcome_text1"
-            android:layout_marginTop="5dp"
-            android:layout_marginStart="130dp"/>
+            android:textStyle="italic" />
 
     </RelativeLayout>
 
@@ -53,22 +53,23 @@
         android:id="@+id/upcoming_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Upcoimg events"
-        android:textStyle="bold"
-        android:textSize="28sp"
-        android:textColor="@color/white"
         android:layout_below="@id/top_bar"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="30dp"/>
+        android:layout_marginTop="8dp"
+        android:text="Upcoimg events"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        android:textStyle="bold" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/event_recy_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/upcoming_text"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="30dp"
         android:layout_centerHorizontal="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="70dp"
         />
 
 </RelativeLayout>
