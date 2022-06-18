@@ -28,6 +28,9 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val bundle = Bundle()
+        var isGuest = false
+
         emailFocusListener()
         passwordFocusListener()
 
@@ -36,7 +39,13 @@ class LoginActivity : AppCompatActivity() {
         }
         //Guest User
         binding.cagText.setOnClickListener {
-            startActivity(Intent(applicationContext,AdminHomeActivity::class.java))
+            isGuest = true
+
+            bundle.putBoolean("isGuest", isGuest)
+
+            intent = Intent(this@LoginActivity, AdminHomeActivity::class.java)
+            intent.putExtras(bundle)
+            startActivity(intent)
         }
 
         binding.btnLogin2.setOnClickListener {

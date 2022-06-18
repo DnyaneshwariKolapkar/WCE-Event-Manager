@@ -4,31 +4,23 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable-v24/calendar_whitecard.xml" value="0.284" />
-        <entry key="app/src/main/res/drawable-v24/ic_calendar.xml" value="0.208" />
         <entry key="app/src/main/res/drawable-v24/middlewhitecard.xml" value="0.284" />
-        <entry key="app/src/main/res/drawable-v24/round.xml" value="0.2065" />
-        <entry key="app/src/main/res/drawable/border.xml" value="0.2065" />
-        <entry key="app/src/main/res/drawable/ic_arrow_back.xml" value="0.2465" />
-        <entry key="app/src/main/res/drawable/round.xml" value="0.2065" />
-        <entry key="app/src/main/res/layout-v28/fragment_registration_form_one.xml" value="0.33541666666666664" />
-        <entry key="app/src/main/res/layout/activity_admin_home.xml" value="0.287962962962963" />
-        <entry key="app/src/main/res/layout/activity_login.xml" value="0.33541666666666664" />
-        <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.33541666666666664" />
-        <entry key="app/src/main/res/layout/activity_welcome.xml" value="0.33541666666666664" />
-        <entry key="app/src/main/res/layout/dropdownitem.xml" value="0.334375" />
-        <entry key="app/src/main/res/layout/event_list.xml" value="0.33541666666666664" />
-        <entry key="app/src/main/res/layout/fragment_admin_user_profile.xml" value="0.33541666666666664" />
+        <entry key="app/src/main/res/layout-v28/fragment_registration_form_one.xml" value="0.35" />
+        <entry key="app/src/main/res/layout/activity_admin_home.xml" value="0.35" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.35" />
+        <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.35" />
+        <entry key="app/src/main/res/layout/activity_welcome.xml" value="0.35" />
+        <entry key="app/src/main/res/layout/custom_toast_empty_tag.xml" value="0.35" />
+        <entry key="app/src/main/res/layout/custom_toast_guest_welcomw.xml" value="0.3489583333333333" />
+        <entry key="app/src/main/res/layout/custom_toast_tag_length.xml" value="0.35" />
+        <entry key="app/src/main/res/layout/fragment_admin_user_profile.xml" value="0.35" />
         <entry key="app/src/main/res/layout/fragment_calendar.xml" value="0.35833333333333334" />
-        <entry key="app/src/main/res/layout/fragment_club_user_profile.xml" value="0.33541666666666664" />
-        <entry key="app/src/main/res/layout/fragment_event_list.xml" value="0.3302564102564103" />
-        <entry key="app/src/main/res/layout/fragment_normal_user_profile.xml" value="0.33541666666666664" />
-        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.33541666666666664" />
-        <entry key="app/src/main/res/layout/fragment_registration__form2.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/fragment_registration__form_.xml" value="0.35833333333333334" />
-        <entry key="app/src/main/res/layout/fragment_registration_form.xml" value="0.35833333333333334" />
-        <entry key="app/src/main/res/layout/fragment_registration_form_one.xml" value="0.35833333333333334" />
-        <entry key="app/src/main/res/layout/round.xml" value="0.334375" />
-        <entry key="app/src/main/res/menu/menu.xml" value="0.33541666666666664" />
+        <entry key="app/src/main/res/layout/fragment_club_user_profile.xml" value="0.35" />
+        <entry key="app/src/main/res/layout/fragment_normal_user_profile.xml" value="0.35" />
+        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.35" />
+        <entry key="app/src/main/res/layout/fragment_registration__form2.xml" value="0.35" />
+        <entry key="app/src/main/res/layout/fragment_registration_form.xml" value="0.35" />
+        <entry key="app/src/main/res/layout/fragment_registration_form_one.xml" value="0.35" />
       </map>
     </option>
   </component>
