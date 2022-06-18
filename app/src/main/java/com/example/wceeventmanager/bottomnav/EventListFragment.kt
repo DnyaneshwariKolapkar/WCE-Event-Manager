@@ -1,7 +1,6 @@
 package com.example.wceeventmanager.bottomnav
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -27,15 +26,14 @@ class EventListFragment : Fragment() {
     }
 
     fun getData(){
-        val listOfEvents = ArrayList<Event>()
+        val listOfFetchEvents = ArrayList<FetchEvent>()
 
         val apiReq = JsonArrayRequest("https://walchand-event-organizer.herokuapp.com/getEvents",{
             for(i in 0 until it.length()){
                 val obj = it.getJSONObject(i)
 
-                // Event name
+                // FetchEvent name
                 val eventName = obj.getString("eventname")
-                Log.e("eventName", eventName)
                 val clubName = "null"
 
                 // Branch tags (if any)
@@ -47,7 +45,7 @@ class EventListFragment : Fragment() {
                     tagsBranch.add(str.toString())
                 }
 
-                // Event tags (if any)
+                // FetchEvent tags (if any)
                 val tagsJSONAOI = obj.getJSONArray("areaofinterest")
                 val tagsAOI = ArrayList<String>()
                 for(j in 0 until tagsJSONAOI.length()){
@@ -55,18 +53,18 @@ class EventListFragment : Fragment() {
                     tagsAOI.add(str.toString())
                 }
 
-                // Event date and time
+                // FetchEvent date and time
                 val eventTime = obj.getString("starttime")
                 val eventDate = obj.getString("date")
 
-                // Event mode
+                // FetchEvent mode
                 val eventMode = obj.getString("mode")
 
-                listOfEvents.add(Event(eventName, clubName, tagsBranch, tagsAOI, eventTime, eventDate, eventMode))
+                listOfFetchEvents.add(FetchEvent(eventName, clubName, tagsBranch, tagsAOI, eventTime, eventDate, eventMode))
             }
 
             val event_recy = mBinding.eventRecyView
-            val Adapter = RecyclerAdapter(listOfEvents, requireContext())
+            val Adapter = RecyclerAdapter(listOfFetchEvents, requireContext())
 
             event_recy.adapter = Adapter
 

@@ -51,6 +51,8 @@
     </RelativeLayout>
 
 
+    </RelativeLayout>
+
     <RelativeLayout
         android:id="@+id/rl2"
         android:layout_width="match_parent"
@@ -272,8 +274,20 @@
 
     </RelativeLayout>
 
+    <ProgressBar
+        android:id="@+id/loading_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:indeterminate="true"
+        style="@android:style/Widget.Material.Light.ProgressBar"
+        android:visibility="gone" />
+
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_next"
+        android:id="@+id/fab_confirm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/rl2"

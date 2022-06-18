@@ -7,9 +7,10 @@
 
     <fragment
         android:id="@+id/registration_form2"
-        android:name="com.example.wceeventmanager.bottomnav.registration_form"
+        android:name="com.example.wceeventmanager.RegistrationFormOneFragment"
         android:label="fragment_registration_form"
-        tools:layout="@layout/fragment_registration_form" />
+        tools:layout="@layout/fragment_registration_form_one" >
+    </fragment>
     <fragment
         android:id="@+id/calendarFragment"
         android:name="com.example.wceeventmanager.bottomnav.CalendarFragment"

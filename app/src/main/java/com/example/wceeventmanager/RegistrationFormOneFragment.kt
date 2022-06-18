@@ -13,6 +13,7 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
 import com.example.wceeventmanager.bottomnav.CalendarFragment
+import com.example.wceeventmanager.bottomnav.RegistrationFormTwoFragment
 import com.example.wceeventmanager.databinding.FragmentRegistrationFormOneBinding
 
 
@@ -69,7 +70,7 @@ class RegistrationFormOneFragment : Fragment() {
             else{
 
                 bundle.putString("eventName", eventName)
-                //  bundle.putString("eventType", eventType)
+                bundle.putString("eventType", eventType)
                 bundle.putString("startTime", startTime)
                 bundle.putString("duration", duration)
                 fragment.arguments = bundle
