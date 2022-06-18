@@ -10,8 +10,8 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
 import com.example.wceeventmanager.bottomnav.CalendarFragment
+import com.example.wceeventmanager.bottomnav.RegistrationFormTwoFragment
 import com.example.wceeventmanager.databinding.FragmentRegistrationFormOneBinding
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 
 class RegistrationFormOneFragment : Fragment() {
@@ -53,9 +53,9 @@ class RegistrationFormOneFragment : Fragment() {
                 return@setOnClickListener
             }
             else{
-                Toast.makeText(context,eventType,Toast.LENGTH_SHORT).show()
+//                Toast.makeText(context,eventType,Toast.LENGTH_SHORT).show()
                 bundle.putString("eventName", eventName)
-                //  bundle.putString("eventType", eventType)
+                bundle.putString("eventType", eventType)
                 bundle.putString("startTime", startTime)
                 bundle.putString("duration", duration)
                 fragment.arguments = bundle

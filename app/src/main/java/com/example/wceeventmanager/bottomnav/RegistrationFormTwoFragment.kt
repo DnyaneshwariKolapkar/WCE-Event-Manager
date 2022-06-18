@@ -1,6 +1,5 @@
-package com.example.wceeventmanager
+package com.example.wceeventmanager.bottomnav
 
-import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
@@ -8,18 +7,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Adapter
 import android.widget.Toast
-import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.Response
 import com.android.volley.VolleyLog.TAG
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
-import com.example.wceeventmanager.bottomnav.AddEvent
-import com.example.wceeventmanager.bottomnav.FetchEvent
+import com.example.wceeventmanager.R
+import com.example.wceeventmanager.RegistrationFormOneFragment
 import com.example.wceeventmanager.databinding.FragmentRegistrationForm2Binding
-import org.json.JSONObject
 
 
 class RegistrationFormTwoFragment : Fragment() {
@@ -250,6 +246,15 @@ class RegistrationFormTwoFragment : Fragment() {
 
         volleyRequestQueue.add(strReq)
         Toast.makeText(requireContext(), "Event added successfully", Toast.LENGTH_SHORT).show()
+
+        // Back to the Main Fragment
+        val fragment = EventListFragment()
+        requireActivity().supportFragmentManager.beginTransaction().replace(R.id.main_fragment, fragment).commit()
+
+        // Clear the data
+        binding?.EditTextAOI?.text?.clear()
+        binding?.EditTextVenue?.text?.clear()
+        binding?.EditTextMeetLink?.text?.clear()
 
     }
 

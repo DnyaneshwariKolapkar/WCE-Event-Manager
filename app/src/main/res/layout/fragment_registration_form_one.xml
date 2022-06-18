@@ -170,7 +170,7 @@
             android:backgroundTint="@color/orange"
             android:ems="10"
             android:hint="@string/enter_start_time"
-            android:inputType="datetime"
+            android:inputType="time"
             android:textSize="14sp" />
 
         <TextView
@@ -199,7 +199,7 @@
             android:backgroundTint="@color/orange"
             android:ems="10"
             android:hint="@string/enter_duration_of_the_event"
-            android:inputType="textPersonName"
+            android:inputType="numberSigned"
             android:textSize="14sp" />
     </RelativeLayout>
 
