@@ -1,10 +1,284 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".bottomnav.ProfileFragment">
+    tools:context=".bottomnav.NormalUserProfile">
+
+    <RelativeLayout
+        android:id="@+id/profile_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/whitecard"
+        >
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profilepic"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_baseline_person">
+
+        </de.hdodenhof.circleimageview.CircleImageView>
+
+        <TextView
+            android:id="@+id/nametv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/profilepic"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:hint="Name"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/emailtv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/profilepic"
+            android:layout_below="@+id/nametv"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:hint="Email"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/editprofileRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/profile_container"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/whitecard3"
+        android:padding="10dp"
+        >
+
+        <TextView
+            android:id="@+id/NormalEditPro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_edit_profile"
+            android:drawablePadding="10dp"
+            android:text="@string/edit_profile_text"
+            android:textColor="#050505"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/edit_profile_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="30dp"
+            android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+            app:tint="#050505"
+            />
 
 
-</FrameLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/applyForClubUserRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editprofileRelativeLayout"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/whitecard3"
+        android:padding="10dp"
+        >
+
+        <TextView
+            android:id="@+id/applyForClubUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_apply_for_club_user"
+            android:drawablePadding="10dp"
+            android:text="@string/apply_for_club_user_text"
+            android:textColor="#050505"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/apply_for_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="30dp"
+            android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+            app:tint="#050505"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/viewEventsRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/applyForClubUserRelativeLayout"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/whitecard3"
+        android:padding="10dp"
+        >
+
+        <TextView
+            android:id="@+id/viewEventsText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:text="@string/view_events_text"
+            android:textColor="#050505"
+            android:textSize="20sp"
+            app:drawableLeftCompat="@drawable/ic_view_events" />
+
+        <ImageView
+            android:id="@+id/view_event_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="30dp"
+            android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+            app:tint="#050505"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/del_club_userRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/viewEventsRelativeLayout"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/whitecard3"
+        android:padding="10dp"
+        >
+
+        <TextView
+            android:id="@+id/del_club_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:text="@string/delete_club_account_text"
+            android:textColor="#050505"
+            android:textSize="20sp"
+            app:drawableLeftCompat="@drawable/ic_delete" />
+
+        <ImageView
+            android:id="@+id/del_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="30dp"
+            android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+            app:tint="#050505"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/event_requestRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/del_club_userRelativeLayout"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/whitecard3"
+        android:padding="10dp"
+        >
+
+        <TextView
+            android:id="@+id/event_request"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_baseline_preview_24"
+            android:drawablePadding="10dp"
+            android:text="@string/event_request_text"
+            android:textColor="#050505"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/event_req_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="30dp"
+            android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+            app:tint="#050505"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/club_requestRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/event_requestRelativeLayout"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/whitecard3"
+        android:padding="10dp"
+        >
+
+        <TextView
+            android:id="@+id/club_request"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_view_club_request"
+            android:drawablePadding="10dp"
+            android:text="Club request"
+            android:textColor="#050505"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/club_req_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="30dp"
+            android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+            app:tint="#050505"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/logoutRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/club_requestRelativeLayout"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/whitecard3"
+        android:padding="10dp"
+        >
+
+        <TextView
+            android:id="@+id/logout_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_logout2"
+            android:drawablePadding="10dp"
+            android:text="@string/logout_text"
+            android:textColor="#050505"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

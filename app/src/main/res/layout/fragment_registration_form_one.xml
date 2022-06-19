@@ -142,39 +142,54 @@
             android:textColor="@color/grey"
             android:textSize="14sp" />
 
+        <Button
+            android:id="@+id/btnSetTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Date"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Set Time"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:onClick="showTimePickerDialog" />
+
         <TextView
             android:id="@+id/starttime"
             android:layout_width="wrap_content"
             android:layout_height="25dp"
             android:layout_below="@id/Date"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_toEndOf="@+id/btnSetTime"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
             android:fontFamily="@font/font1"
             android:text="@string/start_time"
-            android:textColor="@color/orange"
-            android:textSize="14sp"
-            android:textStyle="bold" />
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="normal" />
 
 
-        <EditText
-            android:id="@+id/EditTextStartTime"
-            android:layout_width="match_parent"
-            android:layout_height="38dp"
-            android:layout_below="@id/starttime"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:autofillHints=""
-            android:backgroundTint="@color/orange"
-            android:ems="10"
-            android:hint="@string/enter_start_time"
-            android:inputType="time"
-            android:textSize="14sp" />
+<!--        <EditText-->
+<!--            android:id="@+id/EditTextStartTime"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="38dp"-->
+<!--            android:layout_below="@id/starttime"-->
+<!--            android:layout_marginStart="20dp"-->
+<!--            android:layout_marginEnd="20dp"-->
+<!--            android:autofillHints=""-->
+<!--            android:backgroundTint="@color/orange"-->
+<!--            android:ems="10"-->
+<!--            android:hint="@string/enter_start_time"-->
+<!--            android:inputType="time"-->
+<!--            android:textSize="14sp" />-->
+
+
 
         <TextView
             android:id="@+id/Duration"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/EditTextStartTime"
+            android:layout_below="@id/btnSetTime"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/font1"
@@ -195,7 +210,7 @@
             android:autofillHints=""
             android:backgroundTint="@color/orange"
             android:ems="10"
-            android:hint="@string/enter_duration_of_the_event"
+            android:hint="@string/enter_duration"
             android:inputType="numberSigned"
             android:textSize="14sp" />
     </RelativeLayout>

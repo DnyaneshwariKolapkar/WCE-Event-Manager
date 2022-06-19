@@ -72,6 +72,13 @@
     <string name="or">OR</string>
     <string name="already_have_an_account">Already have an account?</string>
     <string name="text">text</string>
+    <string name="enter_duration">Enter duration in hours</string>
+    <string name="logout_text">Logout</string>
+    <string name="apply_for_club_user_text">Apply for Club User</string>
+    <string name="edit_profile_text">Edit Profile</string>
+    <string name="view_events_text">View Events</string>
+    <string name="delete_club_account_text">Delete club account</string>
+    <string name="event_request_text">Event request</string>
 
 
     <string-array name="events">

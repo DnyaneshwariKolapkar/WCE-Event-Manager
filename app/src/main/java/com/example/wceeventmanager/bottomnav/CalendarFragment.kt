@@ -32,7 +32,19 @@ class CalendarFragment : Fragment() {
         val bundle = Bundle()
 
         calender?.setOnDateChangeListener { calendarView, year, month, dayOfMonth ->
-            date = "$dayOfMonth / $month / $year"
+            var the_real_month = month + 1
+            var the_real_day = dayOfMonth
+            var the_real_year = year
+
+            if (the_real_day < 10) {
+                the_real_day = ("0$the_real_day").toInt()
+            }
+
+            if (the_real_month < 10) {
+                the_real_month = ("0$the_real_month").toInt()
+            }
+
+            date = "$the_real_month/$the_real_day/$the_real_year"
         }
 
         binding?.fab?.setOnClickListener {
