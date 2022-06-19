@@ -1,5 +1,6 @@
 package com.example.wceeventmanager
 
+import android.app.Dialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -27,6 +28,47 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
 
     private val fragmentViewModel : FragmentViewModel by viewModels()
+
+    private lateinit var passTxt : String
+
+    private lateinit var mProgressDialog : Dialog
+
+    /**
+     * If some task in background is taking time user should see loading dialog
+     */
+    fun showProgressDialog()
+    {
+        /**
+         * create a dialog
+         */
+        mProgressDialog = Dialog(this)
+
+        /**
+         * Set the layout for dialog
+         */
+        mProgressDialog.setContentView(R.layout.loading_dialog_layout)
+
+        /**
+         * Dialog should not be cancelled until task is completed
+         * so set cancelable and canceledOnTouchOutside as false
+         */
+        mProgressDialog.setCancelable(false)
+        mProgressDialog.setCanceledOnTouchOutside(false)
+
+        /**
+         * show the dialog
+         */
+        mProgressDialog.show()
+    }
+
+    fun hideProgressDialog()
+    {
+        /**
+         * hide the dialog
+         */
+        mProgressDialog.dismiss()
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -60,6 +102,21 @@ class LoginActivity : AppCompatActivity() {
         supportActionBar!!.hide()
     }
 
+    override fun onResume() {
+        showProgressDialog()
+
+        val sharedPref = getSharedPreferences("userInfo", 0)
+        val email = sharedPref.getString("email", "")!!
+        val password = sharedPref.getString("password", "")!!
+
+        Toast.makeText(this, "Welcome back $email, $password", Toast.LENGTH_LONG).show()
+
+        if(email.isNotEmpty()  && password.length >= 8)
+            signin(email, password)
+
+        super.onResume()
+    }
+
     private fun passwordFocusListener() {
         binding.passwordEditTextLog.setOnFocusChangeListener { _, focused ->
             if(!focused){
@@ -91,8 +148,15 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun onLogin() {
+        showProgressDialog()
+
         val validEmail = binding.emailTILLog.helperText  == null
-        val passTxt = binding.passwordEditTextLog.text.toString()
+        passTxt = binding.passwordEditTextLog.text.toString()
+
+        val sharedPref = getSharedPreferences("userInfo", 0)
+        val editor = sharedPref.edit()
+        editor.putString("password", passTxt)
+        editor.apply()
 
         if(validEmail  && passTxt.length >= 8)
            signin(email = binding.emailEditTextLog.text.toString(), password = binding.passwordEditTextLog.text.toString())
@@ -118,6 +182,8 @@ class LoginActivity : AppCompatActivity() {
         val signInInfo = SignInBody(email, password)
         retIn.signin(signInInfo).enqueue(object : Callback<ResponseBody> {
             override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                hideProgressDialog()
+
                 Toast.makeText(
                     this@LoginActivity,
                     t.message,
@@ -128,11 +194,17 @@ class LoginActivity : AppCompatActivity() {
                 if (response.code() == 200) {
                     Toast.makeText(this@LoginActivity, "Login success!", Toast.LENGTH_SHORT).show()
 
+                    hideProgressDialog()
+
                     val useremail = email
+
+                    // Shared Preferences
+
                     getUserInfo(useremail)
 
                     //startActivity(Intent(applicationContext, AdminHomeActivity::class.java))
                 } else {
+                    hideProgressDialog() 
                     Toast.makeText(this@LoginActivity, response.body().toString(), Toast.LENGTH_SHORT).show()
                 }
             }
@@ -146,9 +218,11 @@ class LoginActivity : AppCompatActivity() {
 
         val jsonObjectRequest = JsonObjectRequest(Request.Method.GET, apiurl, null,
             { response ->
+
                 val id = response.getString("_id")
                 val name = response.getString("name")
                 val email = response.getString("email")
+                val password = response.getString("password")
                 val isVerified = response.getBoolean("isVerified")
                 val isAdminUser = response.getBoolean("isAdminUser")
                 val isClubUser = response.getBoolean("isClubUser")
@@ -163,6 +237,19 @@ class LoginActivity : AppCompatActivity() {
                 bundle.putString("token", token)
 
              //   fragmentViewModel.setData(name)
+
+                // Shared Preferences
+                val sharedPreferences = getSharedPreferences("userInfo", 0)
+                val editor = sharedPreferences.edit()
+
+                // adding data to shared preferences
+                editor.putString("name", name)
+                editor.putString("email", email)
+                editor.putBoolean("isVerified", isVerified)
+                editor.putBoolean("isAdminUser", isAdminUser)
+                editor.putBoolean("isClubUser", isClubUser)
+                editor.putString("token", token)
+                editor.apply()
 
                 var fragmentprof = ProfileFragment()
 

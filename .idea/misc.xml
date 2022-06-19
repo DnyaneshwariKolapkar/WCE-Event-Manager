@@ -42,6 +42,7 @@
         <entry key="app/src/main/res/layout/fragment_registration_form.xml" value="0.35833333333333334" />
         <entry key="app/src/main/res/layout/fragment_registration_form_one.xml" value="0.35833333333333334" />
         <entry key="app/src/main/res/layout/fragment_time_mgmt_screen.xml" value="0.348731884057971" />
+        <entry key="app/src/main/res/layout/loading_dialog_layout.xml" value="0.348731884057971" />
         <entry key="app/src/main/res/layout/round.xml" value="0.334375" />
         <entry key="app/src/main/res/menu-v26/menu.xml" value="0.334375" />
         <entry key="app/src/main/res/menu/menu.xml" value="0.33541666666666664" />

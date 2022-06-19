@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import android.widget.Toast
+import androidx.fragment.app.replace
 import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.Response
@@ -297,13 +298,16 @@ class RegistrationFormTwoFragment : Fragment() {
                 Toast.makeText(requireContext(), "Event added successfully", Toast.LENGTH_SHORT).show()
                 val fragment = EventListFragment()
                 requireActivity().supportFragmentManager.beginTransaction().replace(R.id.main_fragment, fragment).commit()
+
+                val intent = Intent(requireContext(), AdminHomeActivity::class.java)
+                startActivity(intent)
             },
             Response.ErrorListener { error ->
                 // Error
                 Toast.makeText(requireContext(), "Error: " + error.message, Toast.LENGTH_LONG).show()
                 //Back to the Main Fragment
                 val fragment = EventListFragment()
-                requireActivity().supportFragmentManager.beginTransaction().replace(R.id.main_fragment, fragment).commit()
+                requireActivity().supportFragmentManager.beginTransaction().replace(R.id.profile, fragment).commit()
 
                 val intent = Intent(requireContext(), AdminHomeActivity::class.java)
                 startActivity(intent)
