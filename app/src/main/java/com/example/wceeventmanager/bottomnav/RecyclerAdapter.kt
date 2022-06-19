@@ -40,6 +40,15 @@ class RecyclerAdapter(private var fetchEventList: ArrayList<FetchEvent>, var con
 
         // branch tags
         val branches = model.tagsBranch.size
+        if(branches == 0){
+            holder.branch1.visibility = View.GONE
+            holder.branch2.visibility = View.GONE
+            holder.branch3.visibility = View.GONE
+            holder.branch4.visibility = View.GONE
+            holder.branch5.visibility = View.GONE
+            holder.branch6.visibility = View.GONE
+        }
+
         if(branches == 1){
             holder.branch1.text = model.tagsBranch[0]
             holder.branch2.visibility = View.GONE
@@ -96,6 +105,11 @@ class RecyclerAdapter(private var fetchEventList: ArrayList<FetchEvent>, var con
 
         // aoi tags
         val aois = model.tagsAOI.size
+        if(aois == 0){
+            holder.aoi1.visibility = View.GONE
+            holder.aoi2.visibility = View.GONE
+        }
+
         if(aois == 1){
             holder.aoi1.text = model.tagsAOI[0]
             holder.aoi2.visibility = View.GONE
