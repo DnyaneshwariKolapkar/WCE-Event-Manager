@@ -50,9 +50,6 @@
 
     </RelativeLayout>
 
-
-    </RelativeLayout>
-
     <RelativeLayout
         android:id="@+id/rl2"
         android:layout_width="match_parent"
