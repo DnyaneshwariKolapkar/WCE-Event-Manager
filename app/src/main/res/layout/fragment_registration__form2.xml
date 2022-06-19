@@ -47,8 +47,8 @@
             android:text="@string/create_an_event_at_appropriate_time"
             android:textColor="#80000000"
             android:textSize="13sp" />
-
     </RelativeLayout>
+
 
     <RelativeLayout
         android:id="@+id/rl2"
