@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">WCE Event Manager</string>
     <string name="app_logo">app logo</string>
-    <string name="app_Fname">WCE Event Organizer</string>
+    <string name="app_Fname">WCE Event Manager</string>
     <string name="next">Next</string>
     <string name="confused">Confused</string>
     <string name="confused_text_decp">Confused where all your time flies and all the tasks\n you planned for the day left unchecked</string>
@@ -79,6 +79,8 @@
     <string name="view_events_text">View Events</string>
     <string name="delete_club_account_text">Delete club account</string>
     <string name="event_request_text">Event request</string>
+    <string name="click_the_button_below_to_upload_the_image">Click the button below to upload the image</string>
+    <string name="save">SAVE</string>
 
 
     <string-array name="events">
