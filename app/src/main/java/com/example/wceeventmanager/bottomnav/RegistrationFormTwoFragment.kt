@@ -45,6 +45,10 @@ class RegistrationFormTwoFragment : Fragment() {
         val animation = AnimationUtils.loadAnimation(context, com.example.wceeventmanager.R.anim.move)
         binding.txt1.startAnimation(animation)
 
+        // Shared Preferences
+        val sharedPreferences = context?.getSharedPreferences("userInfo", 0)
+        val userToken = sharedPreferences?.getString("token", "")!!
+
         // Tags array - Area of Interest + Branches
         val tagsTopic = ArrayList<String>()
         val tagsBranch = ArrayList<String>()
@@ -259,16 +263,16 @@ class RegistrationFormTwoFragment : Fragment() {
             // Adding data to AddEvent class
             val eventData = AddEvent(eventName, eventType, eventDate, startTime, duration.toString(), jsonArrayAOI, jsonArrayBranch, mode, meetLink, venue)
 
-            postData(eventData)
+            postData(eventData, userToken)
         }
 
         return mbinding!!.root
     }
 
-    private fun postData(eventData: AddEvent) {
+    private fun postData(eventData: AddEvent, token: String) {
         Toast.makeText(requireContext(), eventData.eventName + " " + eventData.eventDate + " " + eventData.eventType + " " + eventData.startTime + " " + eventData.duration + " " + eventData.AOI + " " + eventData.Branches + " " + eventData.mode + " " + eventData.meetLink + " " + eventData.venue, Toast.LENGTH_LONG).show()
 
-        val apiUrl = "https://walchand-event-organizer.herokuapp.com/insertevent"
+        val apiUrl = "https://walchand-event-organizer.herokuapp.com/insertevent/$token"
 
         // Volley post request to add data to the database
         var volleyRequestQueue: RequestQueue? = null

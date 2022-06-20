@@ -103,13 +103,13 @@ class LoginActivity : AppCompatActivity() {
     }
 
     override fun onResume() {
-        showProgressDialog()
+//        showProgressDialog()
 
         val sharedPref = getSharedPreferences("userInfo", 0)
         val email = sharedPref.getString("email", "")!!
         val password = sharedPref.getString("password", "")!!
 
-        Toast.makeText(this, "Welcome back $email, $password", Toast.LENGTH_LONG).show()
+        //Toast.makeText(this, "Welcome back $email, $password", Toast.LENGTH_LONG).show()
 
         if(email.isNotEmpty()  && password.length >= 8)
             signin(email, password)
@@ -148,8 +148,6 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun onLogin() {
-        showProgressDialog()
-
         val validEmail = binding.emailTILLog.helperText  == null
         passTxt = binding.passwordEditTextLog.text.toString()
 
@@ -157,6 +155,8 @@ class LoginActivity : AppCompatActivity() {
         val editor = sharedPref.edit()
         editor.putString("password", passTxt)
         editor.apply()
+
+        if(sharedPref.getString("password", "")!!.isNotEmpty()) showProgressDialog()
 
         if(validEmail  && passTxt.length >= 8)
            signin(email = binding.emailEditTextLog.text.toString(), password = binding.passwordEditTextLog.text.toString())
@@ -182,7 +182,7 @@ class LoginActivity : AppCompatActivity() {
         val signInInfo = SignInBody(email, password)
         retIn.signin(signInInfo).enqueue(object : Callback<ResponseBody> {
             override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
-                hideProgressDialog()
+                //hideProgressDialog()
 
                 Toast.makeText(
                     this@LoginActivity,
@@ -194,17 +194,17 @@ class LoginActivity : AppCompatActivity() {
                 if (response.code() == 200) {
                     Toast.makeText(this@LoginActivity, "Login success!", Toast.LENGTH_SHORT).show()
 
-                    hideProgressDialog()
-
                     val useremail = email
 
                     // Shared Preferences
 
                     getUserInfo(useremail)
 
+                    //hideProgressDialog()
+
                     //startActivity(Intent(applicationContext, AdminHomeActivity::class.java))
                 } else {
-                    hideProgressDialog() 
+                    //hideProgressDialog()
                     Toast.makeText(this@LoginActivity, response.body().toString(), Toast.LENGTH_SHORT).show()
                 }
             }
@@ -258,10 +258,10 @@ class LoginActivity : AppCompatActivity() {
 
                     //supportFragmentManager.beginTransaction().add(R.id.home, eventListFragment).commit()
 
-                    Toast.makeText(this, "${fragmentprof.arguments} ${bundle.getString("name")}", Toast.LENGTH_LONG).show()
+                    //Toast.makeText(this, "${fragmentprof.arguments} ${bundle.getString("name")}", Toast.LENGTH_LONG).show()
                 }
 
-                Toast.makeText(this, "$isAdminUser $isClubUser $isVerified", Toast.LENGTH_SHORT).show()
+                //Toast.makeText(this, "$isAdminUser $isClubUser $isVerified", Toast.LENGTH_SHORT).show()
 
                 intent = Intent(this@LoginActivity, AdminHomeActivity::class.java)
                 intent.putExtras(bundle)
