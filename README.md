@@ -28,7 +28,7 @@ Students face many problems while attending various college events like club ser
 
 ## Flow of the application
 
-![Flow 1](pictures/flow1.png)
+![Flow 1](https://github.com/DnyaneshwariKolapkar/WCE-Event-Manager/blob/main/Pictures/flow1.jpeg)
 
 ![Flow 2](pictures/flow2.png)
 
