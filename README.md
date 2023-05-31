@@ -30,26 +30,26 @@ Students face many problems while attending various college events like club ser
 
 ![Flow 1](https://github.com/DnyaneshwariKolapkar/WCE-Event-Manager/blob/main/Pictures/flow1.jpeg)
 
-![Flow 2](pictures/flow2.png)
+![Flow 2](https://github.com/DnyaneshwariKolapkar/WCE-Event-Manager/blob/main/Pictures/flow2.png)
 
 
 ## Screenshots
 
-![Screenshot 1](pictures/splash.png)
+![Screenshot 1](https://github.com/DnyaneshwariKolapkar/WCE-Event-Manager/blob/main/Pictures/splash.png)
 
-![Screenshot 2](pictures/login.png)
+![Screenshot 2](https://github.com/DnyaneshwariKolapkar/WCE-Event-Manager/blob/main/Pictures/login.png)
 
-![Screenshot 3](pictures/signup.png)
+![Screenshot 3](https://github.com/DnyaneshwariKolapkar/WCE-Event-Manager/blob/main/Pictures/signup.png)
 
-![Screenshot 4](pictures/eventList.png)
+![Screenshot 4](https://github.com/DnyaneshwariKolapkar/WCE-Event-Manager/blob/main/Pictures/eventList.png)
 
-![Screenshot 5](pictures/calendar.png)
+![Screenshot 5](https://github.com/DnyaneshwariKolapkar/WCE-Event-Manager/blob/main/Pictures/calendar.png)
 
-![Screenshot 6](pictures/addEvent.png)
+![Screenshot 6](https://github.com/DnyaneshwariKolapkar/WCE-Event-Manager/blob/main/Pictures/addEvent.png)
 
-![Screenshot 7](pictures/addEvent2.png)
+![Screenshot 7](https://github.com/DnyaneshwariKolapkar/WCE-Event-Manager/blob/main/Pictures/addEvent2.png)
 
-![Screenshot 8](pictures/profile.png)
+![Screenshot 8](https://github.com/DnyaneshwariKolapkar/WCE-Event-Manager/blob/main/Pictures/profile.png)
 
 
 
