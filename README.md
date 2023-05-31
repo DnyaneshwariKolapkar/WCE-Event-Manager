@@ -28,28 +28,19 @@ Students face many problems while attending various college events like club ser
 
 ## Flow of the application
 
-![Flow 1](https://github.com/DnyaneshwariKolapkar/WCE-Event-Manager/blob/main/Pictures/flow1.jpeg)
-
-![Flow 2](https://github.com/DnyaneshwariKolapkar/WCE-Event-Manager/blob/main/Pictures/flow2.png)
+![Flow 1](https://github.com/DnyaneshwariKolapkar/WCE-Event-Manager/blob/main/Pictures/flow1.jpeg) ![Flow 2](https://github.com/DnyaneshwariKolapkar/WCE-Event-Manager/blob/main/Pictures/flow2.png)
 
 
 ## Screenshots
+<!-- add two screenshots side by side-->
 
-![Screenshot 1](https://github.com/DnyaneshwariKolapkar/WCE-Event-Manager/blob/main/Pictures/splash.png)
+![Screenshot 1](https://github.com/DnyaneshwariKolapkar/WCE-Event-Manager/blob/main/Pictures/splash.png) ![Screenshot 2](https://github.com/DnyaneshwariKolapkar/WCE-Event-Manager/blob/main/Pictures/login.png)
 
-![Screenshot 2](https://github.com/DnyaneshwariKolapkar/WCE-Event-Manager/blob/main/Pictures/login.png)
+![Screenshot 3](https://github.com/DnyaneshwariKolapkar/WCE-Event-Manager/blob/main/Pictures/signup.png) ![Screenshot 4](https://github.com/DnyaneshwariKolapkar/WCE-Event-Manager/blob/main/Pictures/eventList.png)
 
-![Screenshot 3](https://github.com/DnyaneshwariKolapkar/WCE-Event-Manager/blob/main/Pictures/signup.png)
+![Screenshot 5](https://github.com/DnyaneshwariKolapkar/WCE-Event-Manager/blob/main/Pictures/calendar.png) ![Screenshot 6](https://github.com/DnyaneshwariKolapkar/WCE-Event-Manager/blob/main/Pictures/addEvent.png)
 
-![Screenshot 4](https://github.com/DnyaneshwariKolapkar/WCE-Event-Manager/blob/main/Pictures/eventList.png)
-
-![Screenshot 5](https://github.com/DnyaneshwariKolapkar/WCE-Event-Manager/blob/main/Pictures/calendar.png)
-
-![Screenshot 6](https://github.com/DnyaneshwariKolapkar/WCE-Event-Manager/blob/main/Pictures/addEvent.png)
-
-![Screenshot 7](https://github.com/DnyaneshwariKolapkar/WCE-Event-Manager/blob/main/Pictures/addEvent2.png)
-
-![Screenshot 8](https://github.com/DnyaneshwariKolapkar/WCE-Event-Manager/blob/main/Pictures/profile.png)
+![Screenshot 7](https://github.com/DnyaneshwariKolapkar/WCE-Event-Manager/blob/main/Pictures/addEvent2.png) ![Screenshot 8](https://github.com/DnyaneshwariKolapkar/WCE-Event-Manager/blob/main/Pictures/profile.png)
 
 
 
